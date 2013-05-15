@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701AD2E41743095F00CC4571 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701AD2E21743095F00CC4571 /* GLKit.framework */; };
+		701AD2E51743095F00CC4571 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701AD2E31743095F00CC4571 /* OpenGLES.framework */; };
+		701AD2E61743097600CC4571 /* UIFXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C87173EB48D00F54D6C /* UIFXView.m */; };
+		701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
 		70C23C3F173EAE5300F54D6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C3E173EAE5300F54D6C /* UIKit.framework */; };
 		70C23C41173EAE5300F54D6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C40173EAE5300F54D6C /* Foundation.framework */; };
 		70C23C43173EAE5300F54D6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C42173EAE5300F54D6C /* CoreGraphics.framework */; };
@@ -21,6 +25,17 @@
 		70C23C5F173EAE5300F54D6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C40173EAE5300F54D6C /* Foundation.framework */; };
 		70C23C67173EAE5300F54D6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C23C65173EAE5300F54D6C /* InfoPlist.strings */; };
 		70C23C6A173EAE5300F54D6C /* UIFXKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C69173EAE5300F54D6C /* UIFXKitTests.m */; };
+		70C23C76173EAF2F00F54D6C /* UIFXShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* UIFXShader.m */; };
+		70C23C79173EB40300F54D6C /* UIFXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C78173EB40300F54D6C /* UIFXWindow.m */; };
+		70C23C7F173EB45A00F54D6C /* glMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7B173EB45A00F54D6C /* glMath.c */; };
+		70C23C80173EB45A00F54D6C /* glMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7B173EB45A00F54D6C /* glMath.c */; };
+		70C23C81173EB45A00F54D6C /* UIView+ImageRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7E173EB45A00F54D6C /* UIView+ImageRender.m */; };
+		70C23C82173EB45A00F54D6C /* UIView+ImageRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7E173EB45A00F54D6C /* UIView+ImageRender.m */; };
+		70C23C83173EB46E00F54D6C /* UIFXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C4E173EAE5300F54D6C /* UIFXAppDelegate.m */; };
+		70C23C84173EB47000F54D6C /* UIFXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C78173EB40300F54D6C /* UIFXWindow.m */; };
+		70C23C85173EB47000F54D6C /* UIFXShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* UIFXShader.m */; };
+		70C23C88173EB48D00F54D6C /* UIFXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C87173EB48D00F54D6C /* UIFXView.m */; };
+		70C23C8B173EB4C500F54D6C /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		701AD2E21743095F00CC4571 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		701AD2E31743095F00CC4571 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		70C23C3B173EAE5300F54D6C /* UIFXKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIFXKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C23C3E173EAE5300F54D6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C23C40173EAE5300F54D6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +70,18 @@
 		70C23C66173EAE5300F54D6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70C23C68173EAE5300F54D6C /* UIFXKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFXKitTests.h; sourceTree = "<group>"; };
 		70C23C69173EAE5300F54D6C /* UIFXKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFXKitTests.m; sourceTree = "<group>"; };
+		70C23C74173EAF2F00F54D6C /* UIFXShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXShader.h; sourceTree = "<group>"; };
+		70C23C75173EAF2F00F54D6C /* UIFXShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXShader.m; sourceTree = "<group>"; };
+		70C23C77173EB40300F54D6C /* UIFXWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXWindow.h; sourceTree = "<group>"; };
+		70C23C78173EB40300F54D6C /* UIFXWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXWindow.m; sourceTree = "<group>"; };
+		70C23C7B173EB45A00F54D6C /* glMath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glMath.c; sourceTree = "<group>"; };
+		70C23C7C173EB45A00F54D6C /* glMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glMath.h; sourceTree = "<group>"; };
+		70C23C7D173EB45A00F54D6C /* UIView+ImageRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ImageRender.h"; sourceTree = "<group>"; };
+		70C23C7E173EB45A00F54D6C /* UIView+ImageRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ImageRender.m"; sourceTree = "<group>"; };
+		70C23C86173EB48D00F54D6C /* UIFXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXView.h; sourceTree = "<group>"; };
+		70C23C87173EB48D00F54D6C /* UIFXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXView.m; sourceTree = "<group>"; };
+		70C23C89173EB4C500F54D6C /* UIFXBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXBaseEffect.h; sourceTree = "<group>"; };
+		70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXBaseEffect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701AD2E41743095F00CC4571 /* GLKit.framework in Frameworks */,
+				701AD2E51743095F00CC4571 /* OpenGLES.framework in Frameworks */,
 				70C23C3F173EAE5300F54D6C /* UIKit.framework in Frameworks */,
 				70C23C41173EAE5300F54D6C /* Foundation.framework in Frameworks */,
 				70C23C43173EAE5300F54D6C /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +113,9 @@
 		70C23C32173EAE5300F54D6C = {
 			isa = PBXGroup;
 			children = (
+				701AD2E21743095F00CC4571 /* GLKit.framework */,
+				701AD2E31743095F00CC4571 /* OpenGLES.framework */,
+				70C23C73173EAEFA00F54D6C /* examples */,
 				70C23C44173EAE5300F54D6C /* UIFXKit */,
 				70C23C62173EAE5300F54D6C /* UIFXKitTests */,
 				70C23C3D173EAE5300F54D6C /* Frameworks */,
@@ -112,6 +146,15 @@
 		70C23C44173EAE5300F54D6C /* UIFXKit */ = {
 			isa = PBXGroup;
 			children = (
+				70C23C7A173EB43400F54D6C /* util */,
+				70C23C77173EB40300F54D6C /* UIFXWindow.h */,
+				70C23C78173EB40300F54D6C /* UIFXWindow.m */,
+				70C23C86173EB48D00F54D6C /* UIFXView.h */,
+				70C23C87173EB48D00F54D6C /* UIFXView.m */,
+				70C23C89173EB4C500F54D6C /* UIFXBaseEffect.h */,
+				70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */,
+				70C23C74173EAF2F00F54D6C /* UIFXShader.h */,
+				70C23C75173EAF2F00F54D6C /* UIFXShader.m */,
 				70C23C4D173EAE5300F54D6C /* UIFXAppDelegate.h */,
 				70C23C4E173EAE5300F54D6C /* UIFXAppDelegate.m */,
 				70C23C45173EAE5300F54D6C /* Supporting Files */,
@@ -150,6 +193,24 @@
 				70C23C65173EAE5300F54D6C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70C23C73173EAEFA00F54D6C /* examples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		70C23C7A173EB43400F54D6C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				70C23C7B173EB45A00F54D6C /* glMath.c */,
+				70C23C7C173EB45A00F54D6C /* glMath.h */,
+				70C23C7D173EB45A00F54D6C /* UIView+ImageRender.h */,
+				70C23C7E173EB45A00F54D6C /* UIView+ImageRender.m */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +325,12 @@
 			files = (
 				70C23C4B173EAE5300F54D6C /* main.m in Sources */,
 				70C23C4F173EAE5300F54D6C /* UIFXAppDelegate.m in Sources */,
+				70C23C7F173EB45A00F54D6C /* glMath.c in Sources */,
+				70C23C81173EB45A00F54D6C /* UIView+ImageRender.m in Sources */,
+				70C23C84173EB47000F54D6C /* UIFXWindow.m in Sources */,
+				70C23C85173EB47000F54D6C /* UIFXShader.m in Sources */,
+				701AD2E61743097600CC4571 /* UIFXView.m in Sources */,
+				701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C23C6A173EAE5300F54D6C /* UIFXKitTests.m in Sources */,
+				70C23C76173EAF2F00F54D6C /* UIFXShader.m in Sources */,
+				70C23C79173EB40300F54D6C /* UIFXWindow.m in Sources */,
+				70C23C80173EB45A00F54D6C /* glMath.c in Sources */,
+				70C23C82173EB45A00F54D6C /* UIView+ImageRender.m in Sources */,
+				70C23C83173EB46E00F54D6C /* UIFXAppDelegate.m in Sources */,
+				70C23C88173EB48D00F54D6C /* UIFXView.m in Sources */,
+				70C23C8B173EB4C500F54D6C /* UIFXBaseEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +510,7 @@
 				70C23C6F173EAE5300F54D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70C23C70173EAE5300F54D6C /* Build configuration list for PBXNativeTarget "UIFXKitTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +519,7 @@
 				70C23C72173EAE5300F54D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

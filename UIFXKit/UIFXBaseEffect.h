@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Casselman Consulting. All rights reserved.
 //
 
-#import "UIFXShader.h"
+#import "Shader.h"
 @interface UIFXBaseEffect : GLKBaseEffect
-@property (nonatomic, strong) UIFXShader *shader;
+@property (nonatomic, strong) id<GLKNamedEffect> shader;
 - (void)setSnapshot:(UIImage *)snapshot;
 
 @end

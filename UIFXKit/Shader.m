@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Casselman Consulting. All rights reserved.
 //
 
-#import "UIFXShader.h"
+#import "Shader.h"
 
-@interface UIFXShader ()
+@interface Shader ()
 @property (nonatomic, assign) int handle;
 @property (nonatomic, assign) BOOL isLinked;
 @property (nonatomic, strong, readwrite) NSString *log;
@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSMutableDictionary *textures;
 @end
 
-@implementation UIFXShader
+@implementation Shader
 @synthesize handle;
 @synthesize isLinked;
 @synthesize log;

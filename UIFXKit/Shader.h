@@ -17,11 +17,10 @@ typedef enum
     TESS_EVALUATION
 }GLSLShaderType;
 
-@interface UIFXShader : GLKBaseEffect
+@interface Shader : NSObject<GLKNamedEffect>
 @property (nonatomic, readonly) int handle;
 @property (nonatomic, readonly) BOOL isLinked;
 @property (nonatomic, strong, readonly) NSString *log;
-- (void)useTexture:(NSString *)file;
 - (void)compileShaderFromFile:(NSString *)fileName type:(GLSLShaderType)type;
 - (void)compileShaderFromString:(NSString *)srcString type:(GLSLShaderType)type;
 - (void)bindAttribLocation:(GLuint) location name:(NSString *)name;

@@ -18,11 +18,7 @@ typedef enum
 }GLSLShaderType;
 
 @interface Shader : NSObject<GLKNamedEffect>
-@property (nonatomic, readonly) int handle;
-@property (nonatomic, readonly) BOOL isLinked;
-@property (nonatomic, strong, readonly) NSString *log;
-- (void)compileShaderFromFile:(NSString *)fileName type:(GLSLShaderType)type;
-- (void)compileShaderFromString:(NSString *)srcString type:(GLSLShaderType)type;
+- (id)initWithVertexShader:(NSString *)vertexShaderFile fragmentShader:(NSString *)fragmentShaderFile;
 - (void)bindAttribLocation:(GLuint) location name:(NSString *)name;
 - (void)bindUniformName:(NSString *)name;
 
@@ -32,8 +28,4 @@ typedef enum
 - (void)set:(NSString *)uniformName toGLKVector2:(GLKVector2)vector2;
 - (void)set:(NSString *)uniformName toGLKVector3:(GLKVector3)vector3;
 - (void)set:(NSString *)uniformName toGLKVector4:(GLKVector4)vector4;
-- (BOOL)create;
-- (BOOL)link;
-- (void)use;
-- (void)destroy;
 @end

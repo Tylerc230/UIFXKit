@@ -7,7 +7,7 @@
 //
 
 #import "UIFXShader.h"
-@interface UIFXBaseEffect : NSObject
+@interface UIFXBaseEffect : GLKBaseEffect
 @property (nonatomic, strong) UIFXShader *shader;
 - (void)setSnapshot:(UIImage *)snapshot;
 

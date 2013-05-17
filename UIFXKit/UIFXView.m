@@ -22,7 +22,6 @@
     return self;
 }
 
-
 - (void)setSnapshot:(UIImage *)snapshot
 {
     _snapshot = snapshot;

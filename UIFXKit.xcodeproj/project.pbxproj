@@ -36,6 +36,7 @@
 		70C23C85173EB47000F54D6C /* UIFXShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* UIFXShader.m */; };
 		70C23C88173EB48D00F54D6C /* UIFXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C87173EB48D00F54D6C /* UIFXView.m */; };
 		70C23C8B173EB4C500F54D6C /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
+		70D1A4921745E08D0000414B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D1A4911745E08D0000414B /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		70C23C87173EB48D00F54D6C /* UIFXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXView.m; sourceTree = "<group>"; };
 		70C23C89173EB4C500F54D6C /* UIFXBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXBaseEffect.h; sourceTree = "<group>"; };
 		70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXBaseEffect.m; sourceTree = "<group>"; };
+		70D1A4911745E08D0000414B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +115,6 @@
 		70C23C32173EAE5300F54D6C = {
 			isa = PBXGroup;
 			children = (
-				701AD2E21743095F00CC4571 /* GLKit.framework */,
-				701AD2E31743095F00CC4571 /* OpenGLES.framework */,
 				70C23C73173EAEFA00F54D6C /* examples */,
 				70C23C44173EAE5300F54D6C /* UIFXKit */,
 				70C23C62173EAE5300F54D6C /* UIFXKitTests */,
@@ -135,6 +135,8 @@
 		70C23C3D173EAE5300F54D6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				701AD2E21743095F00CC4571 /* GLKit.framework */,
+				701AD2E31743095F00CC4571 /* OpenGLES.framework */,
 				70C23C3E173EAE5300F54D6C /* UIKit.framework */,
 				70C23C40173EAE5300F54D6C /* Foundation.framework */,
 				70C23C42173EAE5300F54D6C /* CoreGraphics.framework */,
@@ -198,6 +200,7 @@
 		70C23C73173EAEFA00F54D6C /* examples */ = {
 			isa = PBXGroup;
 			children = (
+				70D1A4901745E0110000414B /* interfaces */,
 			);
 			path = examples;
 			sourceTree = "<group>";
@@ -211,6 +214,14 @@
 				70C23C7E173EB45A00F54D6C /* UIView+ImageRender.m */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		70D1A4901745E0110000414B /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				70D1A4911745E08D0000414B /* MainStoryboard.storyboard */,
+			);
+			path = interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				70C23C51173EAE5300F54D6C /* Default.png in Resources */,
 				70C23C53173EAE5300F54D6C /* Default@2x.png in Resources */,
 				70C23C55173EAE5300F54D6C /* Default-568h@2x.png in Resources */,
+				70D1A4921745E08D0000414B /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

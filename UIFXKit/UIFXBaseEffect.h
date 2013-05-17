@@ -8,7 +8,7 @@
 
 #import "Shader.h"
 @interface UIFXBaseEffect : GLKBaseEffect
-@property (nonatomic, strong) id<GLKNamedEffect> shader;
+- (id)initWithShader:(id<GLKNamedEffect>)shader;
 - (void)setSnapshot:(UIImage *)snapshot;
 
 @end

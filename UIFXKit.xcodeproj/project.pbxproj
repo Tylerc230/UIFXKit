@@ -37,6 +37,11 @@
 		70C23C88173EB48D00F54D6C /* UIFXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C87173EB48D00F54D6C /* UIFXView.m */; };
 		70C23C8B173EB4C500F54D6C /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
 		70D1A4921745E08D0000414B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D1A4911745E08D0000414B /* MainStoryboard.storyboard */; };
+		70D1A4991745F07B0000414B /* UIFXSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4981745F07B0000414B /* UIFXSegue.m */; };
+		70D1A49C1745F2D50000414B /* TransitionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A49B1745F2D50000414B /* TransitionEffect.m */; };
+		70D1A4A01745F4360000414B /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A49F1745F4360000414B /* LandingPageViewController.m */; };
+		70D1A4A41745F49F0000414B /* RippleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4A31745F49F0000414B /* RippleEffect.m */; };
+		70D1A4A81745F4EF0000414B /* TestEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4A71745F4EF0000414B /* TestEffect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,16 @@
 		70C23C89173EB4C500F54D6C /* UIFXBaseEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXBaseEffect.h; sourceTree = "<group>"; };
 		70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXBaseEffect.m; sourceTree = "<group>"; };
 		70D1A4911745E08D0000414B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		70D1A4971745F07B0000414B /* UIFXSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXSegue.h; sourceTree = "<group>"; };
+		70D1A4981745F07B0000414B /* UIFXSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXSegue.m; sourceTree = "<group>"; };
+		70D1A49A1745F2D50000414B /* TransitionEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionEffect.h; path = UIFXKit/effects/TransitionEffect.h; sourceTree = SOURCE_ROOT; };
+		70D1A49B1745F2D50000414B /* TransitionEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransitionEffect.m; path = UIFXKit/effects/TransitionEffect.m; sourceTree = SOURCE_ROOT; };
+		70D1A49E1745F4360000414B /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
+		70D1A49F1745F4360000414B /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
+		70D1A4A21745F49F0000414B /* RippleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RippleEffect.h; sourceTree = "<group>"; };
+		70D1A4A31745F49F0000414B /* RippleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RippleEffect.m; sourceTree = "<group>"; };
+		70D1A4A61745F4EF0000414B /* TestEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestEffect.h; sourceTree = "<group>"; };
+		70D1A4A71745F4EF0000414B /* TestEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEffect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +163,7 @@
 		70C23C44173EAE5300F54D6C /* UIFXKit */ = {
 			isa = PBXGroup;
 			children = (
+				70D1A4931745EF800000414B /* effects */,
 				70C23C7A173EB43400F54D6C /* util */,
 				70C23C77173EB40300F54D6C /* UIFXWindow.h */,
 				70C23C78173EB40300F54D6C /* UIFXWindow.m */,
@@ -159,6 +175,8 @@
 				70C23C75173EAF2F00F54D6C /* Shader.m */,
 				70C23C4D173EAE5300F54D6C /* UIFXAppDelegate.h */,
 				70C23C4E173EAE5300F54D6C /* UIFXAppDelegate.m */,
+				70D1A4971745F07B0000414B /* UIFXSegue.h */,
+				70D1A4981745F07B0000414B /* UIFXSegue.m */,
 				70C23C45173EAE5300F54D6C /* Supporting Files */,
 			);
 			path = UIFXKit;
@@ -200,6 +218,7 @@
 		70C23C73173EAEFA00F54D6C /* examples */ = {
 			isa = PBXGroup;
 			children = (
+				70D1A49D1745F40E0000414B /* src */,
 				70D1A4901745E0110000414B /* interfaces */,
 			);
 			path = examples;
@@ -222,6 +241,44 @@
 				70D1A4911745E08D0000414B /* MainStoryboard.storyboard */,
 			);
 			path = interfaces;
+			sourceTree = "<group>";
+		};
+		70D1A4931745EF800000414B /* effects */ = {
+			isa = PBXGroup;
+			children = (
+				70D1A4A51745F4C70000414B /* test */,
+				70D1A4A11745F47E0000414B /* ripple */,
+				70D1A49A1745F2D50000414B /* TransitionEffect.h */,
+				70D1A49B1745F2D50000414B /* TransitionEffect.m */,
+			);
+			path = effects;
+			sourceTree = "<group>";
+		};
+		70D1A49D1745F40E0000414B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				70D1A49E1745F4360000414B /* LandingPageViewController.h */,
+				70D1A49F1745F4360000414B /* LandingPageViewController.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		70D1A4A11745F47E0000414B /* ripple */ = {
+			isa = PBXGroup;
+			children = (
+				70D1A4A21745F49F0000414B /* RippleEffect.h */,
+				70D1A4A31745F49F0000414B /* RippleEffect.m */,
+			);
+			path = ripple;
+			sourceTree = "<group>";
+		};
+		70D1A4A51745F4C70000414B /* test */ = {
+			isa = PBXGroup;
+			children = (
+				70D1A4A61745F4EF0000414B /* TestEffect.h */,
+				70D1A4A71745F4EF0000414B /* TestEffect.m */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +400,11 @@
 				70C23C85173EB47000F54D6C /* Shader.m in Sources */,
 				701AD2E61743097600CC4571 /* UIFXView.m in Sources */,
 				701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */,
+				70D1A4991745F07B0000414B /* UIFXSegue.m in Sources */,
+				70D1A49C1745F2D50000414B /* TransitionEffect.m in Sources */,
+				70D1A4A01745F4360000414B /* LandingPageViewController.m in Sources */,
+				70D1A4A41745F49F0000414B /* RippleEffect.m in Sources */,
+				70D1A4A81745F4EF0000414B /* TestEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

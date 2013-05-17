@@ -7,11 +7,16 @@
 //
 
 #import "UIFXBaseEffect.h"
+@interface UIFXBaseEffect ()
+@property (nonatomic, strong) id<GLKNamedEffect> shader;
+@end
+
 @implementation UIFXBaseEffect
-- (id)init
+- (id)initWithShader:(id<GLKNamedEffect>)shader;
 {
     self = [super init];
     if (self) {
+        self.shader = shader;
     }
     return self;
 }

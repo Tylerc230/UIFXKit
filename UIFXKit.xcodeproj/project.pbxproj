@@ -43,6 +43,14 @@
 		70D1A4A41745F49F0000414B /* RippleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4A31745F49F0000414B /* RippleEffect.m */; };
 		70D1A4A81745F4EF0000414B /* TestEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4A71745F4EF0000414B /* TestEffect.m */; };
 		70D1A4AA17460A8C0000414B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D1A4A917460A8C0000414B /* QuartzCore.framework */; };
+		70D1A4B21746109B0000414B /* VertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4AD1746109B0000414B /* VertexBuffer.m */; };
+		70D1A4B31746109B0000414B /* VertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4AD1746109B0000414B /* VertexBuffer.m */; };
+		70D1A4B41746109B0000414B /* Model3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4AF1746109B0000414B /* Model3D.m */; };
+		70D1A4B51746109B0000414B /* Model3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4AF1746109B0000414B /* Model3D.m */; };
+		70D1A4B61746109B0000414B /* SceneGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B11746109B0000414B /* SceneGraph.m */; };
+		70D1A4B71746109B0000414B /* SceneGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B11746109B0000414B /* SceneGraph.m */; };
+		70D1A4BA17461B8F0000414B /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B917461B8F0000414B /* Texture.m */; };
+		70D1A4BB17461B8F0000414B /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B917461B8F0000414B /* Texture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +109,14 @@
 		70D1A4A61745F4EF0000414B /* TestEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestEffect.h; sourceTree = "<group>"; };
 		70D1A4A71745F4EF0000414B /* TestEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEffect.m; sourceTree = "<group>"; };
 		70D1A4A917460A8C0000414B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		70D1A4AC1746109B0000414B /* VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexBuffer.h; sourceTree = "<group>"; };
+		70D1A4AD1746109B0000414B /* VertexBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertexBuffer.m; sourceTree = "<group>"; };
+		70D1A4AE1746109B0000414B /* Model3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model3D.h; sourceTree = "<group>"; };
+		70D1A4AF1746109B0000414B /* Model3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model3D.m; sourceTree = "<group>"; };
+		70D1A4B01746109B0000414B /* SceneGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneGraph.h; sourceTree = "<group>"; };
+		70D1A4B11746109B0000414B /* SceneGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneGraph.m; sourceTree = "<group>"; };
+		70D1A4B817461B8F0000414B /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		70D1A4B917461B8F0000414B /* Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +183,7 @@
 		70C23C44173EAE5300F54D6C /* UIFXKit */ = {
 			isa = PBXGroup;
 			children = (
+				70D1A4AB174610670000414B /* gl */,
 				70D1A4931745EF800000414B /* effects */,
 				70C23C7A173EB43400F54D6C /* util */,
 				70C23C77173EB40300F54D6C /* UIFXWindow.h */,
@@ -175,8 +192,6 @@
 				70C23C87173EB48D00F54D6C /* UIFXView.m */,
 				70C23C89173EB4C500F54D6C /* UIFXBaseEffect.h */,
 				70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */,
-				70C23C74173EAF2F00F54D6C /* Shader.h */,
-				70C23C75173EAF2F00F54D6C /* Shader.m */,
 				70C23C4D173EAE5300F54D6C /* UIFXAppDelegate.h */,
 				70C23C4E173EAE5300F54D6C /* UIFXAppDelegate.m */,
 				70D1A4971745F07B0000414B /* UIFXSegue.h */,
@@ -283,6 +298,23 @@
 				70D1A4A71745F4EF0000414B /* TestEffect.m */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		70D1A4AB174610670000414B /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				70D1A4AC1746109B0000414B /* VertexBuffer.h */,
+				70D1A4AD1746109B0000414B /* VertexBuffer.m */,
+				70D1A4AE1746109B0000414B /* Model3D.h */,
+				70D1A4AF1746109B0000414B /* Model3D.m */,
+				70D1A4B01746109B0000414B /* SceneGraph.h */,
+				70D1A4B11746109B0000414B /* SceneGraph.m */,
+				70C23C74173EAF2F00F54D6C /* Shader.h */,
+				70C23C75173EAF2F00F54D6C /* Shader.m */,
+				70D1A4B817461B8F0000414B /* Texture.h */,
+				70D1A4B917461B8F0000414B /* Texture.m */,
+			);
+			path = gl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +441,10 @@
 				70D1A4A01745F4360000414B /* LandingPageViewController.m in Sources */,
 				70D1A4A41745F49F0000414B /* RippleEffect.m in Sources */,
 				70D1A4A81745F4EF0000414B /* TestEffect.m in Sources */,
+				70D1A4B21746109B0000414B /* VertexBuffer.m in Sources */,
+				70D1A4B41746109B0000414B /* Model3D.m in Sources */,
+				70D1A4B61746109B0000414B /* SceneGraph.m in Sources */,
+				70D1A4BA17461B8F0000414B /* Texture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +460,10 @@
 				70C23C83173EB46E00F54D6C /* UIFXAppDelegate.m in Sources */,
 				70C23C88173EB48D00F54D6C /* UIFXView.m in Sources */,
 				70C23C8B173EB4C500F54D6C /* UIFXBaseEffect.m in Sources */,
+				70D1A4B31746109B0000414B /* VertexBuffer.m in Sources */,
+				70D1A4B51746109B0000414B /* Model3D.m in Sources */,
+				70D1A4B71746109B0000414B /* SceneGraph.m in Sources */,
+				70D1A4BB17461B8F0000414B /* Texture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

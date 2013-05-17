@@ -1,8 +1,5 @@
 //
-//  GLSLProgram.h
-//  ShaderTutorials
-//
-//  Created by Tyler Casselman on 7/24/12.
+//  Created by Tyler Casselman
 //  Copyright (c) 2012 Casselman Consulting. All rights reserved.
 //
 

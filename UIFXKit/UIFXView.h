@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIFXBaseEffect.h"
 
-@interface UIFXView : GLKView
+@interface UIFXView : GLKView <GLKViewDelegate>
 @property (nonatomic, strong) UIImage *snapshot;
 @property (nonatomic, strong) UIFXBaseEffect *effect;
 - (void)showEffect:(BOOL)show;

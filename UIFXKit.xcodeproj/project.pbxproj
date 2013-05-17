@@ -42,6 +42,7 @@
 		70D1A4A01745F4360000414B /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A49F1745F4360000414B /* LandingPageViewController.m */; };
 		70D1A4A41745F49F0000414B /* RippleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4A31745F49F0000414B /* RippleEffect.m */; };
 		70D1A4A81745F4EF0000414B /* TestEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4A71745F4EF0000414B /* TestEffect.m */; };
+		70D1A4AA17460A8C0000414B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D1A4A917460A8C0000414B /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		70D1A4A31745F49F0000414B /* RippleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RippleEffect.m; sourceTree = "<group>"; };
 		70D1A4A61745F4EF0000414B /* TestEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestEffect.h; sourceTree = "<group>"; };
 		70D1A4A71745F4EF0000414B /* TestEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEffect.m; sourceTree = "<group>"; };
+		70D1A4A917460A8C0000414B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D1A4AA17460A8C0000414B /* QuartzCore.framework in Frameworks */,
 				701AD2E41743095F00CC4571 /* GLKit.framework in Frameworks */,
 				701AD2E51743095F00CC4571 /* OpenGLES.framework in Frameworks */,
 				70C23C3F173EAE5300F54D6C /* UIKit.framework in Frameworks */,
@@ -150,6 +153,7 @@
 		70C23C3D173EAE5300F54D6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70D1A4A917460A8C0000414B /* QuartzCore.framework */,
 				701AD2E21743095F00CC4571 /* GLKit.framework */,
 				701AD2E31743095F00CC4571 /* OpenGLES.framework */,
 				70C23C3E173EAE5300F54D6C /* UIKit.framework */,

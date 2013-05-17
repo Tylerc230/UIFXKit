@@ -26,4 +26,10 @@
     
 }
 
+- (void)render
+{
+    [self.shader prepareToDraw];
+//    glDrawElements(GL_TRIANGLES, faces_count[0] * 3, INX_TYPE, 0);
+}
+
 @end

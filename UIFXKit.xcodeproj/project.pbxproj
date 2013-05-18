@@ -51,6 +51,7 @@
 		70D1A4B71746109B0000414B /* SceneGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B11746109B0000414B /* SceneGraph.m */; };
 		70D1A4BA17461B8F0000414B /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B917461B8F0000414B /* Texture.m */; };
 		70D1A4BB17461B8F0000414B /* Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D1A4B917461B8F0000414B /* Texture.m */; };
+		70F49A9D17473F7600E57E1E /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F49A9C17473F7600E57E1E /* Plane.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		70D1A4B11746109B0000414B /* SceneGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneGraph.m; sourceTree = "<group>"; };
 		70D1A4B817461B8F0000414B /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		70D1A4B917461B8F0000414B /* Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture.m; sourceTree = "<group>"; };
+		70F49A9B17473F7600E57E1E /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
+		70F49A9C17473F7600E57E1E /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +306,7 @@
 		70D1A4AB174610670000414B /* gl */ = {
 			isa = PBXGroup;
 			children = (
+				70F49A9A17473F5600E57E1E /* objects */,
 				70D1A4AC1746109B0000414B /* VertexBuffer.h */,
 				70D1A4AD1746109B0000414B /* VertexBuffer.m */,
 				70D1A4AE1746109B0000414B /* Model3D.h */,
@@ -315,6 +319,15 @@
 				70D1A4B917461B8F0000414B /* Texture.m */,
 			);
 			path = gl;
+			sourceTree = "<group>";
+		};
+		70F49A9A17473F5600E57E1E /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				70F49A9B17473F7600E57E1E /* Plane.h */,
+				70F49A9C17473F7600E57E1E /* Plane.m */,
+			);
+			path = objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +458,7 @@
 				70D1A4B41746109B0000414B /* Model3D.m in Sources */,
 				70D1A4B61746109B0000414B /* SceneGraph.m in Sources */,
 				70D1A4BA17461B8F0000414B /* Texture.m in Sources */,
+				70F49A9D17473F7600E57E1E /* Plane.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

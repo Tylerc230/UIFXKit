@@ -12,20 +12,15 @@ typedef struct {
     GLKVector3 normal;
     GLKVector2 textureCoords;
 }Vertex;
+#define CREATE_VERT(pos, norm, uv) (Vertex){pos, norm, uv}
 typedef GLushort VertexBufferIndex;
 
 @interface VertexBuffer : NSObject
 @property (nonatomic, readonly) unsigned int vertexCount;
 @property (nonatomic, readonly) float *vertexFloatArray;
+@property (nonatomic, readonly) Vertex *vertexArray;
 @property (nonatomic, readonly) unsigned int vertexBufferSize;
 
-- (VertexBufferIndex)addVerticies:(Vertex *)vertexArray count:(unsigned int)numVertices;
-- (Vertex *)vertexDataForCurrentObject;
-- (void)objectCreationBegin;
-- (void)objectCreationEnd;
-- (void)objectUpdateEnd;
-- (void)objectUpdateBegin;
-- (void)resetUpdateCount;
-
+- (VertexBufferIndex)addNumVerticies:(unsigned int)numVertices;
 
 @end

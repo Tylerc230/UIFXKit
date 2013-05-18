@@ -24,19 +24,38 @@ GLKVector2 rotate2DVector(float radians, GLKVector2 vector);
     return self;
 }
 
-- (void)generateVertices:(VertexBuffer *)vertexBuffer
+- (void)updateVerticies:(Vertex *)vertexBuffer
 {
+    Vertex * currentVertex = vertexBuffer + self.numVerticies;
     for (Model3D *subObject in self.subObjects) {
-        [subObject generateVertices:vertexBuffer];
+        [subObject updateVerticies:currentVertex];
+        currentVertex += subObject.totalVertexCount;
     }
 }
 
-- (void)updateVerticies:(VertexBuffer *)vertexBuffer
+- (void)genIndicies:(NSUInteger)startInx
 {
+    NSUInteger currentIndex = startInx + self.numVerticies;
     for (Model3D *subObject in self.subObjects) {
-        [subObject updateVerticies:vertexBuffer];
+        [subObject genIndicies:currentIndex];
+        currentIndex += subObject.totalVertexCount;
     }
 }
+
+- (NSUInteger)numVerticies
+{
+    return 0;
+}
+
+- (NSUInteger)totalVertexCount
+{
+    NSUInteger numVerts = 0;
+    for (Model3D *model in self.subObjects) {
+        numVerts += model.totalVertexCount;
+    }
+    return self.numVerticies + numVerts;
+}
+
 - (void)addIndex:(VertexBufferIndex)index
 {
     [self.indicies appendBytes:&index length:sizeof(VertexBufferIndex)];

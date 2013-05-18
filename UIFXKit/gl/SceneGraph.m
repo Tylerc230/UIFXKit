@@ -30,21 +30,25 @@
 {
     [self.objects removeAllObjects];
 }
-//If we are animating the individual verticies of an object, this is where that happens
-- (void)updateWorld
-{
-    
-    for (Model3D *object in self.objects) {
-        [object updateVerticies:self.vertexBuffer];
-    }
-    [self.vertexBuffer resetUpdateCount];
-}
 
 - (void)generateBuffers
 {
     self.vertexBuffer = [[VertexBuffer alloc] init];
+    NSUInteger totalVerts = 0;
     for (Model3D *object in self.objects) {
-        [object generateVertices:self.vertexBuffer];
+        totalVerts += object.totalVertexCount;
+        [object genIndicies:totalVerts];
+    }
+    [self.vertexBuffer addNumVerticies:totalVerts];
+}
+
+//If we are animating the individual verticies of an object, this is where that happens
+- (void)updateWorld
+{
+    Vertex *currentVertex = self.vertexBuffer.vertexArray;
+    for (Model3D *object in self.objects) {
+        [object updateVerticies:currentVertex];
+        currentVertex += object.totalVertexCount;
     }
 }
 

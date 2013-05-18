@@ -16,10 +16,13 @@
 @property (nonatomic, assign) GLKVector3 rotation;
 @property (nonatomic, strong) NSMutableData *indicies;
 @property (nonatomic, strong) NSMutableArray *subObjects;
+//Objects vertices + subobjects verts
+@property (nonatomic, readonly) NSUInteger totalVertexCount;
+@property (nonatomic, readonly) NSUInteger numVerticies;
 @property (nonatomic, assign) BOOL twoSided;
 
-- (void)generateVertices:(VertexBuffer *)vertexBuffer;
-- (void)updateVerticies:(VertexBuffer *)vertexBuffer;
+- (void)updateVerticies:(Vertex *)vertexBuffer;
+- (void)genIndicies:(NSUInteger)startInx;
 - (unsigned int)indexCount;
 - (unsigned int)indexByteSize;
 - (VertexBufferIndex *)indexData;

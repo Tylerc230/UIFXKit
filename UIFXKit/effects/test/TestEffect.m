@@ -8,8 +8,10 @@
 
 #import "TestEffect.h"
 #import "Texture.h"
+#import "Plane.h"
 @interface TestEffect ()
 @property (nonatomic, strong) GLKBaseEffect *baseEffect;
+@property (nonatomic, strong) Plane *plane;
 @end
 
 @implementation TestEffect
@@ -23,17 +25,11 @@
         self.baseEffect.lightModelTwoSided = YES;
         self.baseEffect.constantColor = GLKVector4Make(1., 1., 1., 1.);
         self.baseEffect.useConstantColor = YES;
-
         self.plane = [[Plane alloc] initWithWidth:100.f height:100.f nx:2 ny:2];
         [self.graph addWorldObject:self.plane];
         [self updateVertexBuffer];
     }
     return self;
-}
-
-- (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
-{
-    self.baseEffect.transform.modelviewMatrix = modelViewMatrix;
 }
 
 - (void)setCurrentTexture:(Texture *)texture
@@ -49,6 +45,15 @@
     } else {
         self.baseEffect.texture2d0.enabled = GL_FALSE;
     }
+}
+- (void)setProjectionMatrix:(GLKMatrix4)projectionMatrix
+{
+    self.baseEffect.transform.projectionMatrix = projectionMatrix;
+}
+
+- (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
+{
+    self.baseEffect.transform.modelviewMatrix = modelViewMatrix;
 }
 
 @end

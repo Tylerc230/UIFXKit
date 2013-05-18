@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSUInteger numVerticies;
 @property (nonatomic, assign) BOOL twoSided;
 
+- (id)initWithSize:(GLKVector3)size;
 - (void)updateVerticies:(Vertex *)vertexBuffer;
 - (void)genIndicies:(NSUInteger)startInx;
 - (unsigned int)indexCount;

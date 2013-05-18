@@ -36,10 +36,11 @@
     self.vertexBuffer = [[VertexBuffer alloc] init];
     NSUInteger totalVerts = 0;
     for (Model3D *object in self.objects) {
-        totalVerts += object.totalVertexCount;
         [object genIndicies:totalVerts];
+        totalVerts += object.totalVertexCount;
     }
     [self.vertexBuffer addNumVerticies:totalVerts];
+    [self updateWorld];
 }
 
 //If we are animating the individual verticies of an object, this is where that happens

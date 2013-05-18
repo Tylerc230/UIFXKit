@@ -16,9 +16,17 @@
 - (id)initWithFrame:(CGRect)frame
 {
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [EAGLContext setCurrentContext:context];
     self = [super initWithFrame:frame context:context];
     if (self) {
+
+        self.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+        self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+        self.drawableMultisample = GLKViewDrawableMultisample4X;
+        self.contentScaleFactor = [UIScreen mainScreen].scale;
+
         self.backgroundColor = [UIColor clearColor];
+        self.opaque = NO;
         self.delegate = self;
         self.userInteractionEnabled = NO;
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
@@ -26,11 +34,6 @@
         [self animate:NO];
     }
     return self;
-}
-
-- (void)display
-{
-    [super display];
 }
 
 #pragma mark - GLKViewDelegate methods

@@ -12,12 +12,20 @@
 @property (nonatomic, assign) int nx;
 //Number of verts in the y
 @property (nonatomic, assign) int ny;
-//Size in world units
-@property (nonatomic, assign) GLKVector2 size;
 
 @end
 
 @implementation Plane
+- (id)initWithWidth:(float)width height:(float)height nx:(int)nx ny:(int)ny
+{
+    self = [super initWithSize:GLKVector3Make(width, height, 0.f)];
+    if (self) {
+        self.nx = nx;
+        self.ny = ny;
+    }
+    return self;
+}
+
 - (NSUInteger)numVerticies
 {
     return (self.nx * self.ny);

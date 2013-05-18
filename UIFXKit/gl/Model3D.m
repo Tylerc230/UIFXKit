@@ -13,13 +13,14 @@
 GLKVector2 rotate2DVector(float radians, GLKVector2 vector);
 @implementation Model3D
 
-- (id)init
+- (id)initWithSize:(GLKVector3)size
 {
     self = [super init];
     if (self) {
         self.subObjects = [NSMutableArray arrayWithCapacity:5];
         self.scale = GLKVector3Make(1.f, 1.f, 1.f);
         self.indicies = [NSMutableData dataWithCapacity:100];
+        self.size = size;
     }
     return self;
 }

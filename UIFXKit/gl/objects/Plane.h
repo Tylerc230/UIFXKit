@@ -9,5 +9,5 @@
 #import "Model3D.h"
 
 @interface Plane : Model3D
-
+- (id)initWithWidth:(float)width height:(float)height nx:(int)nx ny:(int)ny;
 @end

@@ -42,7 +42,7 @@
     if (self) {
         NSError *error = nil;
         GLKTextureInfo *newTexture = [GLKTextureLoader textureWithCGImage:image.CGImage options:
-                                      [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]  forKey:GLKTextureLoaderOriginBottomLeft] 
+                                      @{GLKTextureLoaderOriginBottomLeft: @YES}
                                                                     error:&error];
         NSAssert(error == nil, @"glError: (%d) Failed to load texture %@",glGetError(), error);
         self.textureInfo = newTexture;

@@ -61,6 +61,7 @@
     {
         [self drawObject:object];
     }
+    NSAssert(glGetError() == 0, @"GL Error %d", glGetError());
 }
 
 - (void)updateStateWithModel:(Model3D*)object
@@ -79,8 +80,8 @@
 - (void)drawObject:(Model3D *)object
 {
     GLKMatrixStackPush(self.matrixStack);
-    [self updateStateWithModel:object];
     [self.shader prepareToDraw];
+    [self updateStateWithModel:object];
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, object.indexByteSize, object.indexData, GL_STATIC_DRAW);
     glDrawElements(GL_TRIANGLES, object.indexCount, GL_UNSIGNED_SHORT, 0);
     

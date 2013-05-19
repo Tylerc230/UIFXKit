@@ -27,12 +27,24 @@
         [self create];
         [self compileShaderFromFile:vertexShaderFile type:VERTEX];
         [self compileShaderFromFile:fragmentShaderFile type:FRAGMENT];
-        [self bindAttribLocation:GLKVertexAttribPosition name:@"position"];
-        [self bindAttribLocation:GLKVertexAttribNormal name:@"normal"];
-        [self bindAttribLocation:GLKVertexAttribTexCoord0 name:@"texture_coordinates"];
+        [self bindAttribLocation:GLKVertexAttribPosition name:kGLSLPositionName];
+        [self bindAttribLocation:GLKVertexAttribNormal name:kGLSLNormalName];
+        [self bindAttribLocation:GLKVertexAttribTexCoord0 name:kGLSLTextureCoordName];
         [self link];
+        [self bindUniformName:kGLSLModelViewMatrixName];
+        [self bindUniformName:kGLSLModelViewProjectionMatrixName];
+        [self bindUniformName:kGLSLNormalMatrixName];
+        [self bindUniformName:kGLSLTextureName];
     }
     return self;
+}
+
+- (void)useTexture:(Texture *)texture
+{
+    glActiveTexture(GL_TEXTURE0);
+    GLuint textureName = texture.textureInfo.name;
+    glBindTexture(GL_TEXTURE_2D, textureName);
+    [self set:kGLSLTextureName toInt:0];
 }
 
 - (void)dealloc
@@ -56,6 +68,12 @@
 {
     GLint location = glGetUniformLocation(self.handle, [name UTF8String]);
     [self.uniforms setObject:[NSNumber numberWithInt:location] forKey:name];
+}
+
+- (void)set:(NSString *)uniformName toInt:(int)intValue
+{
+    GLint location = [self locForName:uniformName];
+    glUniform1i(location, intValue);
 }
 
 - (void)set:(NSString *)uniformName toFloat:(float)floatValue

@@ -44,16 +44,10 @@
     [self.effect render];
 }
 
-
 - (void)setSnapshot:(UIImage *)snapshot
 {
     _snapshot = snapshot;
     [self.effect setSnapshot:snapshot];
-}
-
-- (void)setEffect:(UIFXBaseEffect *)effect
-{
-    _effect = effect;
 }
 
 - (void)showEffect:(BOOL)show

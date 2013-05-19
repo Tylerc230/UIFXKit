@@ -16,13 +16,12 @@
 @property (nonatomic, strong) SceneGraph *graph;
 @property (nonatomic, assign) GLKMatrixStackRef matrixStack;
 @property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
-@property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (nonatomic, assign) GLuint indexBuffer;
 @property (nonatomic, assign) GLuint vertexBuffer;
 @end
 
 @implementation UIFXBaseEffect
-- (id)initWithShader:(id<GLKNamedEffect>)shader;
+- (id)initWithShader:(id<GLKNamedEffect>)shader
 {
     self = [super init];
     if (self) {

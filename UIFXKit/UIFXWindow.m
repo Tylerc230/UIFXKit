@@ -67,8 +67,7 @@
 
 - (void)takeSnapshot
 {
-    UIView *rootView = self.rootViewController.view;
-    UIImage * snapshot = [rootView snapshot];
+    UIImage * snapshot = [self snapshot];
     [self.fxView setSnapshot:snapshot];
 }
 

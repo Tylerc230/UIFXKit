@@ -9,6 +9,7 @@
 #import "TestEffect.h"
 #import "Texture.h"
 #import "Plane.h"
+#define kWhiteColor GLKVector4Make(1.f, 1.f, 1.f, 1.f);
 @interface TestEffect ()
 @property (nonatomic, strong) GLKBaseEffect *baseEffect;
 @property (nonatomic, strong) Plane *plane;
@@ -22,9 +23,6 @@
     if (self) {
         self.transitionDuration = 2.f;
         self.baseEffect = baseEffect;
-        self.baseEffect.lightModelTwoSided = YES;
-        self.baseEffect.constantColor = GLKVector4Make(1., 1., 1., 1.);
-        self.baseEffect.useConstantColor = YES;
         self.plane = [[Plane alloc] initWithWidth:100.f height:100.f nx:2 ny:2];
         [self.graph addWorldObject:self.plane];
         [self updateVertexBuffer];
@@ -32,20 +30,17 @@
     return self;
 }
 
-- (void)setCurrentTexture:(Texture *)texture
+- (void)updateStateWithModel:(Model3D*)object
 {
-    if (texture != nil) {
+    [super updateStateWithModel:object];
+    if (self.currentTexture != nil) {
         self.baseEffect.texture2d0.enabled = GL_TRUE;
-        self.baseEffect.texture2d0.name = texture.textureInfo.name;
-        self.baseEffect.texture2d0.envMode = GLKTextureEnvModeModulate;
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
+        self.baseEffect.texture2d0.name = self.currentTexture.textureInfo.name;
     } else {
         self.baseEffect.texture2d0.enabled = GL_FALSE;
     }
 }
+
 - (void)setProjectionMatrix:(GLKMatrix4)projectionMatrix
 {
     self.baseEffect.transform.projectionMatrix = projectionMatrix;

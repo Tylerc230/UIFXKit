@@ -9,5 +9,5 @@
 #import "TransitionEffect.h"
 
 @interface RippleEffect : TransitionEffect
-
+@property (nonatomic, assign) CGPoint rippleOrigin;
 @end

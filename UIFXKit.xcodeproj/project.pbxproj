@@ -11,6 +11,8 @@
 		701AD2E51743095F00CC4571 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701AD2E31743095F00CC4571 /* OpenGLES.framework */; };
 		701AD2E61743097600CC4571 /* UIFXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C87173EB48D00F54D6C /* UIFXView.m */; };
 		701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
+		706D255F1748621D00F12908 /* ripple_shader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 706D255B1748605E00F12908 /* ripple_shader.vert */; };
+		706D25601748621D00F12908 /* ripple_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 706D255D1748607200F12908 /* ripple_shader.frag */; };
 		70C23C3F173EAE5300F54D6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C3E173EAE5300F54D6C /* UIKit.framework */; };
 		70C23C41173EAE5300F54D6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C40173EAE5300F54D6C /* Foundation.framework */; };
 		70C23C43173EAE5300F54D6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C42173EAE5300F54D6C /* CoreGraphics.framework */; };
@@ -68,6 +70,8 @@
 		701AD2E21743095F00CC4571 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		701AD2E31743095F00CC4571 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		706D255A1748582600F12908 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		706D255B1748605E00F12908 /* ripple_shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ripple_shader.vert; sourceTree = "<group>"; };
+		706D255D1748607200F12908 /* ripple_shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ripple_shader.frag; sourceTree = "<group>"; };
 		70C23C3B173EAE5300F54D6C /* UIFXKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIFXKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C23C3E173EAE5300F54D6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C23C40173EAE5300F54D6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -292,6 +296,8 @@
 			children = (
 				70D1A4A21745F49F0000414B /* RippleEffect.h */,
 				70D1A4A31745F49F0000414B /* RippleEffect.m */,
+				706D255B1748605E00F12908 /* ripple_shader.vert */,
+				706D255D1748607200F12908 /* ripple_shader.frag */,
 			);
 			path = ripple;
 			sourceTree = "<group>";
@@ -404,6 +410,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				706D255F1748621D00F12908 /* ripple_shader.vert in Resources */,
+				706D25601748621D00F12908 /* ripple_shader.frag in Resources */,
 				70C23C49173EAE5300F54D6C /* InfoPlist.strings in Resources */,
 				70C23C51173EAE5300F54D6C /* Default.png in Resources */,
 				70C23C53173EAE5300F54D6C /* Default@2x.png in Resources */,

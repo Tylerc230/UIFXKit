@@ -9,7 +9,11 @@
 #import "LandingPageViewController.h"
 #import "UIFXWindow.h"
 #import "TestEffect.h"
+#import "RippleEffect.h"
+
 #define kTestSegueId @"TestSegue"
+#define kRippleSegueId @"RippleSegue"
+
 @interface LandingPageViewController ()
 
 @end
@@ -20,6 +24,9 @@
     if ([segue.identifier isEqualToString:kTestSegueId])
     {
         [UIFXWindow keyWindow].effect = [TestEffect new];
+    } else if ([segue.identifier isEqualToString:kRippleSegueId])
+    {
+        [UIFXWindow keyWindow].effect = [RippleEffect new];
     }
 }
 @end

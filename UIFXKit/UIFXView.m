@@ -59,6 +59,7 @@
 - (void)showEffect:(BOOL)show
 {
     if (show) {
+        [self display];
         [self animate:YES];
     } else {
         [self animate:NO];

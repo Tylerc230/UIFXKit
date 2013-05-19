@@ -10,7 +10,6 @@
 #import "UIFXWindow.h"
 #import "Texture.h"
 #define kCameraAngleDeg 65.f
-#define kScreenSize [UIFXWindow keyWindow].screen.bounds.size
 
 @interface UIFXBaseEffect ()
 @property (nonatomic, strong) id<GLKNamedEffect> shader;
@@ -30,7 +29,6 @@
         self.shader = shader;
         self.graph = [SceneGraph new];
         [self setupGLState];
-
     }
     return self;
 }

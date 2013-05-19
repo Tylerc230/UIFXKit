@@ -9,7 +9,7 @@
 #import "TestEffect.h"
 #import "Texture.h"
 #import "Plane.h"
-#define kWhiteColor GLKVector4Make(1.f, 1.f, 1.f, 1.f);
+
 @interface TestEffect ()
 @property (nonatomic, strong) GLKBaseEffect *baseEffect;
 @property (nonatomic, strong) Plane *plane;
@@ -23,7 +23,7 @@
     if (self) {
         self.transitionDuration = 2.f;
         self.baseEffect = baseEffect;
-        self.plane = [[Plane alloc] initWithWidth:100.f height:100.f nx:2 ny:2];
+        self.plane = [[Plane alloc] initWithWidth:kScreenSize.width height:kScreenSize.height nx:2 ny:2];
         [self.graph addWorldObject:self.plane];
         [self updateVertexBuffer];
     }

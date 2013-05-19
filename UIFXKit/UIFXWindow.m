@@ -39,13 +39,12 @@
     return (UIFXWindow *)[[UIApplication sharedApplication] keyWindow];
 }
 
-
 - (void)startTransition:(TransitionStartCallback)transitionStarted
 {
     self.transitionStarted = transitionStarted;
     [self takeSnapshot];
     [self.fxView showEffect:YES];
-    [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(finishSnapshot) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(finishSnapshot) userInfo:nil repeats:NO];
 }
 
 - (void)endTransition

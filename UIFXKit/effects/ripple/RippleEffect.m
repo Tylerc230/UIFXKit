@@ -28,7 +28,7 @@
     Shader *shader = [[Shader alloc] initWithVertexShader:@"ripple_shader.vert" fragmentShader:@"ripple_shader.frag"];
     self = [super initWithShader:shader];
     if (self) {
-        self.transitionDuration = 2.f;
+        self.transitionDuration = 4.f;
         self.shader = shader;
         [self.shader bindUniformName:kRippleOriginName];
         [self.shader bindUniformName:kRippleRadiusName];

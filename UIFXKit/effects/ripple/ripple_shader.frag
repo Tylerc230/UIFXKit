@@ -7,7 +7,8 @@ uniform highp vec3 uRippleOrigin;
 uniform highp float uRippleRadius;
 
 
-#define kFrequency .2
+#define kFrequency .05
+#define kMaxAmplitude .02
 
 mediump vec2 modulateUVAlongAxis(in mediump vec2 uv, in highp vec2 axis, in highp float modulator);
 
@@ -19,7 +20,7 @@ void main()
     highp float dCenter = length(radial);
     //Distance from fragment to wave edge
     highp float dEdge = uRippleRadius - dCenter;
-    highp float radialTextureOffset = sin(dEdge * kFrequency);
+    highp float radialTextureOffset = sin(dEdge * kFrequency) * kMaxAmplitude;
     highp vec2 modUV = modulateUVAlongAxis(vFragTextureCoords, radial.xy, radialTextureOffset);
     gl_FragColor = texture2D(uTexture, modUV);
 }

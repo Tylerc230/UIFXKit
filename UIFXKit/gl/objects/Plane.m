@@ -63,9 +63,10 @@
         for(int x = 0; x < self.nx; x++)
         {
             Vertex *vert = vertexBuffer + x + (y * self.nx);
-            GLKVector3 pos = GLKVector3Make(x * dx - self.size.x/2, y * dy - self.size.y/2, 0.f);
+            GLKVector3 pos = GLKVector3Make(x * dx, y * dy, 0.f);
             GLKVector3 norm = GLKVector3Make(0., 0., 1.f);
-            GLKVector2 uv = GLKVector2Make(x * du, y * dv);
+            //We use 1 - dv since our coord system is y pointing down
+            GLKVector2 uv = GLKVector2Make(x * du, (1.f - y * dv));
             *vert = CREATE_VERT(pos, norm, uv);
         }
     }

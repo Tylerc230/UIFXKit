@@ -132,7 +132,8 @@
     float screenHeigh = kScreenSize.height;
     float cameraZ = -(screenHeigh/2)/tan(GLKMathDegreesToRadians(kCameraAngleDeg)/2);
     self.matrixStack = GLKMatrixStackCreate(NULL);
-    GLKMatrixStackTranslate(self.matrixStack, 0.f, 0.f, cameraZ);
+    GLKMatrixStackTranslate(self.matrixStack, -kScreenSize.width/2.f, kScreenSize.height/2.f, cameraZ);
+    GLKMatrixStackRotate(self.matrixStack, M_PI, 1.f, 0.f, 0.f);
     GLKMatrixStackPush(self.matrixStack);    
 }
 

@@ -19,7 +19,7 @@
 @end
 
 @implementation LandingPageViewController
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
     if ([segue.identifier isEqualToString:kTestSegueId])
     {

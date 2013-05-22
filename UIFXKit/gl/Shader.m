@@ -26,10 +26,14 @@
         [self bindAttribLocation:GLKVertexAttribNormal name:kGLSLNormalName];
         [self bindAttribLocation:GLKVertexAttribTexCoord0 name:kGLSLTextureCoordName];
         [self link];
-        [self bindUniformName:kGLSLModelViewMatrixName];
+        if (![self validateProgram:self.handle]) {
+            [self exit];
+        }
         [self bindUniformName:kGLSLModelViewProjectionMatrixName];
+        [self bindUniformName:kGLSLModelViewMatrixName];
         [self bindUniformName:kGLSLNormalMatrixName];
         [self bindUniformName:kGLSLTextureName];
+
     }
     return self;
 }
@@ -62,7 +66,7 @@
 - (void)bindUniformName:(NSString *)name
 {
     GLint location = glGetUniformLocation(self.handle, [name UTF8String]);
-    if (location > 0) {
+    if (location >= 0) {
         [self.uniforms setObject:[NSNumber numberWithInt:location] forKey:name];
     }
 }
@@ -70,7 +74,7 @@
 - (void)set:(NSString *)uniformName toInt:(int)intValue
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniform1i(location, intValue);
     }
 }
@@ -78,7 +82,7 @@
 - (void)set:(NSString *)uniformName toFloat:(float)floatValue
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniform1f(location, floatValue);
     }
 }
@@ -86,7 +90,7 @@
 - (void)set:(NSString *)uniformName toGLKMatrix3:(GLKMatrix3)matrix3
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniformMatrix3fv(location, 1, 0, matrix3.m);
     }
 }
@@ -94,7 +98,7 @@
 - (void)set:(NSString *)uniformName toGLKMatrix4:(GLKMatrix4)matrix4
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniformMatrix4fv(location, 1, 0, matrix4.m);
     }
 }
@@ -102,7 +106,7 @@
 - (void)set:(NSString *)uniformName toGLKVector2:(GLKVector2)vector2
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniform2f(location, vector2.x, vector2.y);
     }
 }
@@ -110,7 +114,7 @@
 - (void)set:(NSString *)uniformName toGLKVector3:(GLKVector3)vector3
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniform3f(location, vector3.x, vector3.y, vector3.z);
     }
 }
@@ -118,7 +122,7 @@
 - (void)set:(NSString *)uniformName toGLKVector4:(GLKVector4)vector4
 {
     GLint location = [self locForName:uniformName];
-    if (location > 0) {
+    if (location >= 0) {
         glUniform4f(location, vector4.x, vector4.y, vector4.z, vector4.w);
     }
 }

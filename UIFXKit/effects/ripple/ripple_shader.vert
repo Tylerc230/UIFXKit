@@ -8,11 +8,12 @@ attribute vec3 aVertPosition;
 attribute vec3 aVertNormal;
 attribute vec2 aVertTextureCoords;
 
+varying vec3 vFragPosition;
 varying vec2 vFragTextureCoords;
-
 
 void main()
 {
     gl_Position = uModelViewProjectionMatrix * vec4(aVertPosition, 1.0);
+    vFragPosition = aVertPosition;
     vFragTextureCoords = aVertTextureCoords;
 }

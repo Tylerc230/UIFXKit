@@ -9,13 +9,15 @@
 #import "UIFXBaseEffect.h"
 #import "UIFXWindow.h"
 #import "Texture.h"
+
 #define kCameraAngleDeg 65.f
+
+
 
 @interface UIFXBaseEffect ()
 @property (nonatomic, strong) id<GLKNamedEffect> shader;
 @property (nonatomic, strong) SceneGraph *graph;
 @property (nonatomic, assign) GLKMatrixStackRef matrixStack;
-@property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
 @property (nonatomic, assign) GLuint indexBuffer;
 @property (nonatomic, assign) GLuint vertexBuffer;
 @end
@@ -37,8 +39,14 @@
     self.currentTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
 }
 
+- (void)update:(CFTimeInterval)duration
+{
+    self.elapseTime += duration;
+}
+
 - (void)preRenderSetup
 {
+    [self.shader prepareToDraw];
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.indexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, self.vertexBuffer);
     
@@ -51,7 +59,6 @@
     
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, stride, (GLvoid *)offsetof(Vertex, textureCoords));
-    self.projectionMatrix = [self projectionMatrix];
 }
 
 - (void)render
@@ -64,23 +71,21 @@
     NSAssert(glGetError() == 0, @"GL Error %d", glGetError());
 }
 
-- (void)updateStateWithModel:(Model3D*)object
+- (void)updateStateWithModel:(Model3D*)model
 {
-    GLKMatrixStackTranslateWithVector3(self.matrixStack, object.anchorPoint);
-    GLKMatrixStackTranslateWithVector3(self.matrixStack, object.position);
-    GLKMatrixStackScaleWithVector3(self.matrixStack, object.scale);
-    GLKMatrixStackRotateZ(self.matrixStack, object.rotation.z);
-    GLKMatrixStackRotateX(self.matrixStack, object.rotation.x);
-    GLKMatrixStackRotateY(self.matrixStack, object.rotation.y);
-    GLKMatrixStackTranslateWithVector3(self.matrixStack, GLKVector3Negate(object.anchorPoint));
+    GLKMatrixStackTranslateWithVector3(self.matrixStack, model.anchorPoint);
+    GLKMatrixStackTranslateWithVector3(self.matrixStack, model.position);
+    GLKMatrixStackScaleWithVector3(self.matrixStack, model.scale);
+    GLKMatrixStackRotateZ(self.matrixStack, model.rotation.z);
+    GLKMatrixStackRotateX(self.matrixStack, model.rotation.x);
+    GLKMatrixStackRotateY(self.matrixStack, model.rotation.y);
+    GLKMatrixStackTranslateWithVector3(self.matrixStack, GLKVector3Negate(model.anchorPoint));
     self.modelViewMatrix = GLKMatrixStackGetMatrix4(self.matrixStack);
-    
 }
 
 - (void)drawObject:(Model3D *)object
 {
     GLKMatrixStackPush(self.matrixStack);
-    [self.shader prepareToDraw];
     [self updateStateWithModel:object];
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, object.indexByteSize, object.indexData, GL_STATIC_DRAW);
     glDrawElements(GL_TRIANGLES, object.indexCount, GL_UNSIGNED_SHORT, 0);

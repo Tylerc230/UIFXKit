@@ -10,9 +10,15 @@
 #import "Shader.h"
 #import "Plane.h"
 
+#define kRippleOriginName @"uRippleOrigin"
+#define kRippleRadiusName @"uRippleRadius"
+
+#define kMaxRadius 500.f
+
 @interface RippleEffect ()
-@property (nonatomic, strong) Shader *rippleShader;
+@property (nonatomic, strong) Shader *shader;
 @property (nonatomic, strong) Plane *plane;
+@property (nonatomic, assign) float rippleRadius;
 @end
 
 @implementation RippleEffect
@@ -23,7 +29,9 @@
     self = [super initWithShader:shader];
     if (self) {
         self.transitionDuration = 2.f;
-        self.rippleShader = shader;
+        self.shader = shader;
+        [self.shader bindUniformName:kRippleOriginName];
+        [self.shader bindUniformName:kRippleRadiusName];
         self.plane = [[Plane alloc] initWithWidth:kScreenSize.width height:kScreenSize.height nx:2 ny:2];
         [self.graph addWorldObject:self.plane];
         [self updateVertexBuffer];
@@ -32,19 +40,23 @@
     return self;
 }
 
-- (void)updateStateWithModel:(Model3D*)object
+- (void)preRenderSetup
 {
-    [super updateStateWithModel:object];
+    [super preRenderSetup];
+    [self.shader set:kRippleRadiusName toFloat:self.rippleRadius];
+    [self.shader set:kRippleOriginName toGLKVector3:GLKVector3Make(self.rippleOrigin.x, self.rippleOrigin.y, 0.f)];
+//    [self.shader set:kGLSLModelViewMatrixName toGLKMatrix4:self.modelViewMatrix];
+    GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.projectionMatrix, self.modelViewMatrix);
+    [self.shader set:kGLSLModelViewProjectionMatrixName toGLKMatrix4:modelViewProjectionMatrix];
     if (self.currentTexture != nil) {
-        [self.rippleShader useTexture:self.currentTexture];
+        [self.shader useTexture:self.currentTexture];
     }
 }
 
-- (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
+- (void)update:(CFTimeInterval)duration
 {
-    [self.rippleShader set:kGLSLModelViewMatrixName toGLKMatrix4:modelViewMatrix];
-    GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.projectionMatrix, modelViewMatrix);
-    [self.rippleShader set:kGLSLModelViewProjectionMatrixName toGLKMatrix4:modelViewProjectionMatrix];
+    [super update:duration];
+    float percentComplete = self.elapseTime/self.transitionDuration;
+    self.rippleRadius = percentComplete * kMaxRadius;
 }
-
 @end

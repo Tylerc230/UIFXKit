@@ -26,7 +26,9 @@
         [UIFXWindow keyWindow].effect = [TestEffect new];
     } else if ([segue.identifier isEqualToString:kRippleSegueId])
     {
-        [UIFXWindow keyWindow].effect = [RippleEffect new];
+        RippleEffect *rippleEffect = [RippleEffect new];
+        [UIFXWindow keyWindow].effect = rippleEffect;
+        rippleEffect.rippleOrigin = CGPointMake(0.f, 0.f);
     }
 }
 @end

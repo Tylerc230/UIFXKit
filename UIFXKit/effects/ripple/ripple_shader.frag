@@ -23,6 +23,13 @@ void main()
     highp float radialTextureOffset = sin(dEdge * kFrequency) * kMaxAmplitude;
     highp vec2 modUV = modulateUVAlongAxis(vFragTextureCoords, radial.xy, radialTextureOffset);
     gl_FragColor = texture2D(uTexture, modUV);
+
+    if (dCenter > uRippleRadius)
+    {
+        gl_FragColor = texture2D(uTexture, vFragTextureCoords);
+    } else {
+        gl_FragColor = texture2D(uTexture, modUV);
+    }
 }
 
 mediump vec2 modulateUVAlongAxis(in mediump vec2 uv, in highp vec2 axis, in highp float modulator)

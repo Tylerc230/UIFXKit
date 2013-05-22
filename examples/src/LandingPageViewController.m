@@ -28,7 +28,7 @@
     {
         RippleEffect *rippleEffect = [RippleEffect new];
         [UIFXWindow keyWindow].effect = rippleEffect;
-        rippleEffect.rippleOrigin = CGPointMake(0.f, 0.f);
+        rippleEffect.rippleOrigin = [[UIFXWindow keyWindow] convertPoint:sender.center fromView:self.view];
     }
 }
 @end

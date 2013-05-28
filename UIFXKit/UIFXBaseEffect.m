@@ -36,7 +36,7 @@
 
 - (void)setSnapshot:(UIImage *)snapshot
 {
-    self.currentTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
+    self.screenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
 }
 
 - (void)update:(CFTimeInterval)duration

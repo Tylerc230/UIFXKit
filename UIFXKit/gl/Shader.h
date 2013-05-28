@@ -30,7 +30,7 @@ typedef enum
 - (id)initWithVertexShader:(NSString *)vertexShaderFile fragmentShader:(NSString *)fragmentShaderFile;
 - (void)bindAttribLocation:(GLuint) location name:(NSString *)name;
 - (void)bindUniformName:(NSString *)name;
-- (void)useTexture:(Texture *)texture;
+- (void)useTexture:(Texture *)texture atLocation:(NSInteger)glPosition forName:(NSString *)varName;
 - (void)set:(NSString *)uniformName toGLKMatrix4:(GLKMatrix4)matrix4;
 - (void)set:(NSString *)uniformName toGLKMatrix3:(GLKMatrix3)matrix3;
 - (void)set:(NSString *)uniformName toFloat:(float)floatValue;

@@ -33,9 +33,9 @@
 - (void)updateStateWithModel:(Model3D*)object
 {
     [super updateStateWithModel:object];
-    if (self.currentTexture != nil) {
+    if (self.screenshotTexture != nil) {
         self.baseEffect.texture2d0.enabled = GL_TRUE;
-        self.baseEffect.texture2d0.name = self.currentTexture.textureInfo.name;
+        self.baseEffect.texture2d0.name = self.screenshotTexture.textureInfo.name;
     } else {
         self.baseEffect.texture2d0.enabled = GL_FALSE;
     }

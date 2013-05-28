@@ -38,12 +38,12 @@
     return self;
 }
 
-- (void)useTexture:(Texture *)texture
+- (void)useTexture:(Texture *)texture atLocation:(NSInteger)glPosition forName:(NSString *)varName
 {
-    glActiveTexture(GL_TEXTURE0);
+    glActiveTexture(glPosition);
     GLuint textureName = texture.textureInfo.name;
-    glBindTexture(GL_TEXTURE_2D, textureName);
-    [self set:kGLSLTextureName toInt:0];
+    glBindTexture(texture.textureInfo.target, textureName);
+    [self set:varName toInt:glPosition - GL_TEXTURE0];
 }
 
 - (void)dealloc

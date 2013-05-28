@@ -11,7 +11,7 @@
 #import "Texture.h"
 @interface UIFXBaseEffect : NSObject
 @property (nonatomic, readonly) SceneGraph *graph;
-@property (nonatomic, strong) Texture *currentTexture;
+@property (nonatomic, strong) Texture *screenshotTexture;
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
 @property (nonatomic, assign) float elapseTime;

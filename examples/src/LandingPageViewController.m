@@ -8,7 +8,7 @@
 
 #import "LandingPageViewController.h"
 #import "UIFXWindow.h"
-#import "TestEffect.h"
+#import "FireEffect.h"
 #import "RippleEffect.h"
 
 #define kTestSegueId @"TestSegue"
@@ -23,7 +23,7 @@
 {
     if ([segue.identifier isEqualToString:kTestSegueId])
     {
-        [UIFXWindow keyWindow].effect = [TestEffect new];
+        [UIFXWindow keyWindow].effect = [FireEffect new];
     } else if ([segue.identifier isEqualToString:kRippleSegueId])
     {
         RippleEffect *rippleEffect = [RippleEffect new];

@@ -70,8 +70,16 @@
     } else {
         self.animate = NO;
     }
-    self.hidden = !show;
-
+    if (show) {
+        self.hidden = NO;
+    } else {
+        [UIView animateWithDuration:.75f animations:^{
+            self.alpha = 0.f;
+        } completion:^(BOOL finished) {
+            self.hidden = YES;
+            self.alpha = 1.f;
+        }];
+    }
 }
 
 #pragma mark - Private

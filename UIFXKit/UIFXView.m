@@ -16,11 +16,16 @@
 @end
 
 @implementation UIFXView
-- (id)initWithFrame:(CGRect)frame
++ (void)initialize
 {
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:context];
-    self = [super initWithFrame:frame context:context];
+}
+
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame context:[EAGLContext currentContext]];
     if (self) {
         [self setup];
     }
@@ -31,9 +36,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-        [EAGLContext setCurrentContext:context];
-        self.context = context;
+        self.context = [EAGLContext currentContext];
         [self setup];
     }
     return self;

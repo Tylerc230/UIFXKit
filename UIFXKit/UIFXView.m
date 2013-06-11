@@ -22,19 +22,19 @@
     [EAGLContext setCurrentContext:context];
     self = [super initWithFrame:frame context:context];
     if (self) {
+        [self setup];
+    }
+    return self;
+}
 
-        self.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
-        self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-        self.drawableMultisample = GLKViewDrawableMultisample4X;
-        self.contentScaleFactor = [UIScreen mainScreen].scale;
-
-        self.backgroundColor = [UIColor clearColor];
-        self.opaque = NO;
-        self.delegate = self;
-        self.userInteractionEnabled = NO;
-        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
-        self.animate = NO;
-        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        [EAGLContext setCurrentContext:context];
+        self.context = context;
+        [self setup];
     }
     return self;
 }
@@ -82,6 +82,22 @@
 }
 
 #pragma mark - Private
+- (void)setup
+{
+    self.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+    self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    self.drawableMultisample = GLKViewDrawableMultisample4X;
+    self.contentScaleFactor = [UIScreen mainScreen].scale;
+    
+    self.backgroundColor = [UIColor clearColor];
+    self.opaque = NO;
+    self.delegate = self;
+    self.userInteractionEnabled = NO;
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(display)];
+    self.animate = NO;
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
 - (void)setAnimate:(BOOL)animate
 {
     _animate = animate;

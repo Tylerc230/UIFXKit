@@ -15,6 +15,7 @@
 		701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
 		706D255F1748621D00F12908 /* ripple_shader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 706D255B1748605E00F12908 /* ripple_shader.vert */; };
 		706D25601748621D00F12908 /* ripple_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 706D255D1748607200F12908 /* ripple_shader.frag */; };
+		7077D7A21767D1D000253AB8 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077D7A11767D1D000253AB8 /* SourceViewController.m */; };
 		707B6986174C90E400AB915C /* texture2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 707B6985174C90E400AB915C /* texture2.jpg */; };
 		70BC97401752F83F0094D469 /* burn_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BC973F1752F83F0094D469 /* burn_map.png */; };
 		70BC97431752F8580094D469 /* FireEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BC97421752F8580094D469 /* FireEffect.m */; };
@@ -77,6 +78,8 @@
 		706D255A1748582600F12908 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		706D255B1748605E00F12908 /* ripple_shader.vert */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ripple_shader.vert; sourceTree = "<group>"; };
 		706D255D1748607200F12908 /* ripple_shader.frag */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ripple_shader.frag; sourceTree = "<group>"; };
+		7077D7A01767D1D000253AB8 /* SourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceViewController.h; sourceTree = "<group>"; };
+		7077D7A11767D1D000253AB8 /* SourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceViewController.m; sourceTree = "<group>"; };
 		707B6985174C90E400AB915C /* texture2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture2.jpg; sourceTree = "<group>"; };
 		70BC973F1752F83F0094D469 /* burn_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burn_map.png; sourceTree = "<group>"; };
 		70BC97411752F8580094D469 /* FireEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireEffect.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 			children = (
 				70D1A49E1745F4360000414B /* LandingPageViewController.h */,
 				70D1A49F1745F4360000414B /* LandingPageViewController.m */,
+				7077D7A01767D1D000253AB8 /* SourceViewController.h */,
+				7077D7A11767D1D000253AB8 /* SourceViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				70D1A4BA17461B8F0000414B /* Texture.m in Sources */,
 				70F49A9D17473F7600E57E1E /* Plane.m in Sources */,
 				70BC97431752F8580094D469 /* FireEffect.m in Sources */,
+				7077D7A21767D1D000253AB8 /* SourceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

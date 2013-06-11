@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LandingPageViewController : UIViewController
+@interface LandingPageViewController : UITableViewController
 
 @end

@@ -7,11 +7,12 @@
 //
 
 #import "LandingPageViewController.h"
-#import "UIFXWindow.h"
+#import "SourceViewController.h"
+
 #import "FireEffect.h"
 #import "RippleEffect.h"
 
-#define kTestSegueId @"TestSegue"
+#define kFireSegueId @"FireSegue"
 #define kRippleSegueId @"RippleSegue"
 
 @interface LandingPageViewController ()
@@ -19,16 +20,15 @@
 @end
 
 @implementation LandingPageViewController
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender
 {
-    if ([segue.identifier isEqualToString:kTestSegueId])
+    SourceViewController *dest = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:kFireSegueId])
     {
-        [UIFXWindow keyWindow].effect = [FireEffect new];
+        dest.transitionEffect = [FireEffect new];
     } else if ([segue.identifier isEqualToString:kRippleSegueId])
     {
-        RippleEffect *rippleEffect = [RippleEffect new];
-        [UIFXWindow keyWindow].effect = rippleEffect;
-        rippleEffect.rippleOrigin = [[UIFXWindow keyWindow] convertPoint:sender.center fromView:self.view];
+        dest.transitionEffect = [RippleEffect new];
     }
 }
 @end

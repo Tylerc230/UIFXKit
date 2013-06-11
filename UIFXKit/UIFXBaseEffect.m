@@ -34,9 +34,14 @@
     return self;
 }
 
-- (void)setSnapshot:(UIImage *)snapshot
+- (void)setSourceSnapshot:(UIImage *)snapshot
 {
-    self.screenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
+    self.sourceScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
+}
+
+- (void)setDestSnapshot:(UIImage *)snapshot
+{
+    self.destScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
 }
 
 - (void)preRenderSetup

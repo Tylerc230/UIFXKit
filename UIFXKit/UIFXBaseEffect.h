@@ -11,13 +11,15 @@
 #import "Texture.h"
 @interface UIFXBaseEffect : NSObject
 @property (nonatomic, readonly) SceneGraph *graph;
-@property (nonatomic, strong) Texture *screenshotTexture;
+@property (nonatomic, strong) Texture *sourceScreenshotTexture;
+@property (nonatomic, strong) Texture *destScreenshotTexture;
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
 @property (nonatomic, assign) float progress;
 
 - (id)initWithShader:(id<GLKNamedEffect>)shader;
-- (void)setSnapshot:(UIImage *)snapshot;
+- (void)setSourceSnapshot:(UIImage *)snapshot;
+- (void)setDestSnapshot:(UIImage *)snapshot;
 - (void)preRenderSetup;
 - (void)render:(CFTimeInterval)duration;
 - (void)updateVertexBuffer;

@@ -48,8 +48,8 @@
 //    [self.shader set:kGLSLModelViewMatrixName toGLKMatrix4:self.modelViewMatrix];
     GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.projectionMatrix, self.modelViewMatrix);
     [self.shader set:kGLSLModelViewProjectionMatrixName toGLKMatrix4:modelViewProjectionMatrix];
-    if (self.screenshotTexture != nil) {
-        [self.shader useTexture:self.screenshotTexture atLocation:GL_TEXTURE0 forName:kGLSLTextureName];
+    if (self.sourceScreenshotTexture != nil) {
+        [self.shader useTexture:self.sourceScreenshotTexture atLocation:GL_TEXTURE0 forName:kGLSLTextureName];
     }
 }
 

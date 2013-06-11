@@ -42,8 +42,8 @@
     [self.shader set:kFireProgressName toFloat:self.progress];
     GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.projectionMatrix, self.modelViewMatrix);
     [self.shader set:kGLSLModelViewProjectionMatrixName toGLKMatrix4:modelViewProjectionMatrix];
-    if (self.screenshotTexture) {
-        [self.shader useTexture:self.screenshotTexture atLocation:GL_TEXTURE0 forName:kGLSLTextureName];
+    if (self.sourceScreenshotTexture) {
+        [self.shader useTexture:self.sourceScreenshotTexture atLocation:GL_TEXTURE0 forName:kGLSLTextureName];
     }
     if (self.burnMapTexture) {
         [self.shader useTexture:self.burnMapTexture atLocation:GL_TEXTURE1 forName:kBurnMapName];

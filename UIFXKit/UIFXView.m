@@ -58,7 +58,7 @@
 - (void)setSnapshot:(UIImage *)snapshot
 {
     _snapshot = snapshot;
-    [self.effect setSnapshot:snapshot];
+    [self.effect setSourceSnapshot:snapshot];
 }
 
 - (void)showEffect:(BOOL)show

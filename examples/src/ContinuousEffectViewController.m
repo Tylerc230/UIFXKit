@@ -8,6 +8,7 @@
 
 #import "ContinuousEffectViewController.h"
 #import "UIFXView.h"
+#import "UIView+ImageRender.h"
 
 @interface ContinuousEffectViewController ()
 @property (nonatomic, strong) IBOutlet UIView *view1;
@@ -27,6 +28,8 @@
 #pragma mark - IBActions
 - (IBAction)sliderTapped:(UISlider *)sender
 {
+    [self.effect setSourceSnapshot:[[self sourceView] snapshot]];
+    [self.effect setDestSnapshot:[[self destView] snapshot]];
     [self.effectView showEffect:YES];
 }
 
@@ -38,6 +41,25 @@
 - (IBAction)sliderValueReleased:(UISlider *)slider
 {
     [self.effectView showEffect:NO];
+}
+
+#pragma mark - Private method
+- (UIView *)sourceView
+{
+    if (self.view1.hidden) {
+        return self.view2;
+    } else {
+        return self.view1;
+    }
+}
+
+- (UIView *)destView
+{
+    if (self.view1.hidden) {
+        return self.view1;
+    } else {
+        return self.view2;
+    }
 }
 
 @end

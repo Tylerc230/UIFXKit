@@ -20,7 +20,7 @@
     if (self) {
         float stripH = height/numStrips;
         for (int i = 0; i < numStrips; i++) {
-            Plane *strip = [[Plane alloc] initWithSize:GLKVector3Make(width, stripH, 0.f)];
+            Plane *strip = [[Plane alloc] initWithWidth:width height:stripH nx:2 ny:2];
             strip.position = GLKVector3Make(0.f, i * stripH, 0.f);
             [self addSubObject:strip];
         }

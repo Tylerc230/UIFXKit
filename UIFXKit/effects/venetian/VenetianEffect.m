@@ -27,13 +27,13 @@
     return self;
 }
 
-- (void)updateStateWithModel:(Model3D *)model
+- (void)preRenderSetup
 {
-    [super updateStateWithModel:model];
-    if (self.screenshotTexture != nil)
+    [super preRenderSetup];
+    if (self.sourceScreenshotTexture != nil)
     {
         self.shader.texture2d0.enabled = GL_TRUE;
-        self.shader.texture2d0.name = self.screenshotTexture.textureInfo.name;
+        self.shader.texture2d0.name = self.sourceScreenshotTexture.textureInfo.name;
     } else {
         self.shader.texture2d0.enabled = GL_FALSE;
     }

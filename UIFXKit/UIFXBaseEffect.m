@@ -68,7 +68,8 @@
     {
         [self drawObject:object];
     }
-    NSAssert(glGetError() == 0, @"GL Error %d", glGetError());
+    int error = glGetError();
+    NSAssert(error == 0, @"GL Error %d", error);
 }
 
 - (void)updateStateWithModel:(Model3D*)model

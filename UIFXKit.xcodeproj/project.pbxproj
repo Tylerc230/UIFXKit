@@ -15,6 +15,8 @@
 		701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
 		706D255F1748621D00F12908 /* ripple_shader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 706D255B1748605E00F12908 /* ripple_shader.vert */; };
 		706D25601748621D00F12908 /* ripple_shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 706D255D1748607200F12908 /* ripple_shader.frag */; };
+		7077D79B17679BFB00253AB8 /* HorzStripPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077D79A17679BFB00253AB8 /* HorzStripPlane.m */; };
+		7077D79F1767CC2000253AB8 /* VenetianEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077D79E1767CC2000253AB8 /* VenetianEffect.m */; };
 		707B6986174C90E400AB915C /* texture2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 707B6985174C90E400AB915C /* texture2.jpg */; };
 		70BC97401752F83F0094D469 /* burn_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BC973F1752F83F0094D469 /* burn_map.png */; };
 		70BC97431752F8580094D469 /* FireEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BC97421752F8580094D469 /* FireEffect.m */; };
@@ -77,6 +79,10 @@
 		706D255A1748582600F12908 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		706D255B1748605E00F12908 /* ripple_shader.vert */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ripple_shader.vert; sourceTree = "<group>"; };
 		706D255D1748607200F12908 /* ripple_shader.frag */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ripple_shader.frag; sourceTree = "<group>"; };
+		7077D79917679BFB00253AB8 /* HorzStripPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorzStripPlane.h; sourceTree = "<group>"; };
+		7077D79A17679BFB00253AB8 /* HorzStripPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorzStripPlane.m; sourceTree = "<group>"; };
+		7077D79D1767CC2000253AB8 /* VenetianEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenetianEffect.h; sourceTree = "<group>"; };
+		7077D79E1767CC2000253AB8 /* VenetianEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenetianEffect.m; sourceTree = "<group>"; };
 		707B6985174C90E400AB915C /* texture2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture2.jpg; sourceTree = "<group>"; };
 		70BC973F1752F83F0094D469 /* burn_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burn_map.png; sourceTree = "<group>"; };
 		70BC97411752F8580094D469 /* FireEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireEffect.h; sourceTree = "<group>"; };
@@ -165,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7077D79C1767CBCD00253AB8 /* venetian */ = {
+			isa = PBXGroup;
+			children = (
+				7077D79D1767CC2000253AB8 /* VenetianEffect.h */,
+				7077D79E1767CC2000253AB8 /* VenetianEffect.m */,
+			);
+			path = venetian;
+			sourceTree = "<group>";
+		};
 		70BC973E1752F8190094D469 /* fire */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +313,7 @@
 		70D1A4931745EF800000414B /* effects */ = {
 			isa = PBXGroup;
 			children = (
+				7077D79C1767CBCD00253AB8 /* venetian */,
 				70BC973E1752F8190094D469 /* fire */,
 				70D1A4A51745F4C70000414B /* test */,
 				70D1A4A11745F47E0000414B /* ripple */,
@@ -359,6 +375,8 @@
 			children = (
 				70F49A9B17473F7600E57E1E /* Plane.h */,
 				70F49A9C17473F7600E57E1E /* Plane.m */,
+				7077D79917679BFB00253AB8 /* HorzStripPlane.h */,
+				7077D79A17679BFB00253AB8 /* HorzStripPlane.m */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -499,6 +517,8 @@
 				70D1A4BA17461B8F0000414B /* Texture.m in Sources */,
 				70F49A9D17473F7600E57E1E /* Plane.m in Sources */,
 				70BC97431752F8580094D469 /* FireEffect.m in Sources */,
+				7077D79B17679BFB00253AB8 /* HorzStripPlane.m in Sources */,
+				7077D79F1767CC2000253AB8 /* VenetianEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

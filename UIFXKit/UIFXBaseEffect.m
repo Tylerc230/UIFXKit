@@ -39,11 +39,6 @@
     self.screenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
 }
 
-- (void)update:(CFTimeInterval)duration
-{
-    self.elapseTime += duration;
-}
-
 - (void)preRenderSetup
 {
     [self.shader prepareToDraw];
@@ -61,7 +56,7 @@
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, stride, (GLvoid *)offsetof(Vertex, textureCoords));
 }
 
-- (void)render
+- (void)render:(CFTimeInterval)duration
 {
     [self preRenderSetup];
     for (Model3D *object in self.graph.objects)

@@ -10,4 +10,6 @@
 
 @interface TransitionEffect : UIFXBaseEffect
 @property (nonatomic, assign) NSTimeInterval transitionDuration;
+@property (nonatomic, assign) float elapseTime;
+- (void)update:(CFTimeInterval)duration;
 @end

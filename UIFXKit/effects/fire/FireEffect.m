@@ -39,7 +39,7 @@
 - (void)preRenderSetup
 {
     [super preRenderSetup];
-    [self.shader set:kFireProgressName toFloat:self.elapseTime/self.transitionDuration];
+    [self.shader set:kFireProgressName toFloat:self.progress];
     GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.projectionMatrix, self.modelViewMatrix);
     [self.shader set:kGLSLModelViewProjectionMatrixName toGLKMatrix4:modelViewProjectionMatrix];
     if (self.screenshotTexture) {
@@ -50,8 +50,4 @@
     }
 }
 
-- (void)update:(CFTimeInterval)duration
-{
-    [super update:duration];
-}
 @end

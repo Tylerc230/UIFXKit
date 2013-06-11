@@ -32,7 +32,7 @@
 
 - (IBAction)sliderValueChanged:(UISlider *)slider
 {
-    
+    self.effect.progress = slider.value;
 }
 
 - (IBAction)sliderValueReleased:(UISlider *)slider

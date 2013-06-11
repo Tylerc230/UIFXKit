@@ -56,7 +56,7 @@
 - (void)update:(CFTimeInterval)duration
 {
     [super update:duration];
-    float percentComplete = self.elapseTime/self.transitionDuration;
+    float percentComplete = self.progress;
     self.rippleRadius = percentComplete * kMaxRadius;
 }
 @end

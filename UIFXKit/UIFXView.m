@@ -51,8 +51,7 @@
     if (self.lastTimestamp == 0.f) {
         duration = 0.f;
     }
-    [self.effect update:duration];
-    [self.effect render];
+    [self.effect render:duration];
     self.lastTimestamp = self.displayLink.timestamp;
 }
 

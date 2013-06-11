@@ -14,12 +14,12 @@
 @property (nonatomic, strong) Texture *screenshotTexture;
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
-@property (nonatomic, assign) float elapseTime;
+@property (nonatomic, assign) float progress;
+
 - (id)initWithShader:(id<GLKNamedEffect>)shader;
 - (void)setSnapshot:(UIImage *)snapshot;
-- (void)update:(CFTimeInterval)duration;
 - (void)preRenderSetup;
-- (void)render;
+- (void)render:(CFTimeInterval)duration;
 - (void)updateVertexBuffer;
 - (void)setupGLState;
 - (void)updateStateWithModel:(Model3D*)model;

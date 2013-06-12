@@ -29,7 +29,7 @@
 - (IBAction)sliderTapped:(UISlider *)sender
 {
     [self.effect setSourceSnapshot:[[self sourceView] snapshot]];
-    [self.effect setDestSnapshot:[[self destView] snapshot]];
+//    [self.effect setDestSnapshot:[[self destView] snapshot]];
     [self.effectView showEffect:YES];
 }
 

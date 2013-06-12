@@ -430,28 +430,6 @@
     <resources>
         <image name="texture2.jpg" width="930" height="1420"/>
     </resources>
-    <classes>
-        <class className="ContinuousEffectViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContinuousEffectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sliderTapped:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
-                <relationship kind="action" name="sliderValueReleased:" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="effectView" candidateClass="UIFXView"/>
-                <relationship kind="outlet" name="view1" candidateClass="UIView"/>
-                <relationship kind="outlet" name="view2" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="LandingPageViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LandingPageViewController.h"/>
-        </class>
-        <class className="SourceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SourceViewController.h"/>
-        </class>
-        <class className="UIFXView" superclassName="GLKView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIFXView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

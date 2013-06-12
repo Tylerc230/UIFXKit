@@ -54,10 +54,14 @@
 - (void)updateVerticies:(Vertex *)vertexBuffer
 {
     [super updateVerticies:vertexBuffer];
+    UVMap *uvMap = self.uvMap;
+    if (uvMap == nil) {
+        uvMap = [UVMap defaultUVMap];
+    }
     float dx = self.size.x/(self.nx - 1);
     float dy = self.size.y/(self.ny - 1);
-    float du = 1.f/(self.nx - 1);
-    float dv = 1.f/(self.ny - 1);
+    float du = uvMap.dU/(self.nx - 1);
+    float dv = uvMap.dV/(self.ny - 1);
     for (int y = 0; y < self.ny; y++)
     {
         for(int x = 0; x < self.nx; x++)
@@ -66,7 +70,7 @@
             GLKVector3 pos = GLKVector3Make(x * dx, y * dy, 0.f);
             GLKVector3 norm = GLKVector3Make(0., 0., 1.f);
             //We use 1 - dv since our coord system is y pointing down
-            GLKVector2 uv = GLKVector2Make(x * du, (1.f - y * dv));
+            GLKVector2 uv = GLKVector2Make(uvMap.u0 + x * du, uvMap.v0 + (1.f - y * dv));
             *vert = CREATE_VERT(pos, norm, uv);
         }
     }

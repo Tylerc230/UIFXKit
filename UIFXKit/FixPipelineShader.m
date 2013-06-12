@@ -50,7 +50,6 @@
     } else {
         self.baseEffect.texture2d0.enabled = GL_FALSE;
     }
-
 }
 
 - (void)setTexture2:(Texture *)texture2

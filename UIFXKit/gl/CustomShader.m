@@ -2,9 +2,9 @@
 //  Copyright (c) 2012 Casselman Consulting. All rights reserved.
 //
 
-#import "Shader.h"
+#import "CustomShader.h"
 
-@interface Shader ()
+@interface CustomShader ()
 @property (nonatomic, assign) int handle;
 @property (nonatomic, assign) BOOL isLinked;
 @property (nonatomic, strong, readwrite) NSString *log;
@@ -12,7 +12,7 @@
 @property (nonatomic, strong) NSMutableDictionary *textures;
 @end
 
-@implementation Shader
+@implementation CustomShader
 - (id)initWithVertexShader:(NSString *)vertexShaderFile fragmentShader:(NSString *)fragmentShaderFile
 {
     self = [super init];
@@ -51,7 +51,7 @@
     [self destroy];
 }
 
-#pragma mark - GLKNamedEffect methods
+
 - (void)prepareToDraw
 {
     [self use];

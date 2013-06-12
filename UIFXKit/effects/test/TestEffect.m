@@ -9,20 +9,21 @@
 #import "TestEffect.h"
 #import "Texture.h"
 #import "Plane.h"
+#import "FixPipelineShader.h"
 
 @interface TestEffect ()
-@property (nonatomic, strong) GLKBaseEffect *baseEffect;
+@property (nonatomic, strong) FixPipelineShader *baseEffect;
 @property (nonatomic, strong) Plane *plane;
 @end
 
 @implementation TestEffect
 - (id)init
 {
-    GLKBaseEffect *baseEffect = [GLKBaseEffect new];
-    self = [super initWithShader:baseEffect];
+    FixPipelineShader *shader = [FixPipelineShader new];
+    self = [super initWithShader:shader];
     if (self) {
         self.transitionDuration = 2.f;
-        self.baseEffect = baseEffect;
+        self.baseEffect = shader;
         self.plane = [[Plane alloc] initWithWidth:kScreenSize.width height:kScreenSize.height nx:2 ny:2];
         [self.graph addWorldObject:self.plane];
         [self updateVertexBuffer];
@@ -33,22 +34,7 @@
 - (void)updateStateWithModel:(Model3D*)object
 {
     [super updateStateWithModel:object];
-    if (self.sourceScreenshotTexture != nil) {
-        self.baseEffect.texture2d0.enabled = GL_TRUE;
-        self.baseEffect.texture2d0.name = self.sourceScreenshotTexture.textureInfo.name;
-    } else {
-        self.baseEffect.texture2d0.enabled = GL_FALSE;
-    }
-}
-
-- (void)setProjectionMatrix:(GLKMatrix4)projectionMatrix
-{
-    self.baseEffect.transform.projectionMatrix = projectionMatrix;
-}
-
-- (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
-{
-    self.baseEffect.transform.modelviewMatrix = modelViewMatrix;
+    self.baseEffect.texture1 = self.sourceScreenshotTexture;
 }
 
 @end

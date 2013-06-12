@@ -15,7 +15,7 @@
 
 
 @interface UIFXBaseEffect ()
-@property (nonatomic, strong) id<GLKNamedEffect> shader;
+@property (nonatomic, strong) Shader *shader;
 @property (nonatomic, strong) SceneGraph *graph;
 @property (nonatomic, assign) GLKMatrixStackRef matrixStack;
 @property (nonatomic, assign) GLuint indexBuffer;
@@ -23,7 +23,7 @@
 @end
 
 @implementation UIFXBaseEffect
-- (id)initWithShader:(id<GLKNamedEffect>)shader
+- (id)initWithShader:(Shader *)shader
 {
     self = [super init];
     if (self) {
@@ -47,6 +47,9 @@
 - (void)preRenderSetup
 {
     [self.shader prepareToDraw];
+    
+    self.shader.projectionMatrix = self.projectionMatrix;
+    
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.indexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, self.vertexBuffer);
     
@@ -81,7 +84,7 @@
     GLKMatrixStackRotateX(self.matrixStack, model.rotation.x);
     GLKMatrixStackRotateY(self.matrixStack, model.rotation.y);
     GLKMatrixStackTranslateWithVector3(self.matrixStack, GLKVector3Negate(model.anchorPoint));
-    self.modelViewMatrix = GLKMatrixStackGetMatrix4(self.matrixStack);
+    self.shader.modelViewMatrix = GLKMatrixStackGetMatrix4(self.matrixStack);
 }
 
 - (void)drawObject:(Model3D *)object

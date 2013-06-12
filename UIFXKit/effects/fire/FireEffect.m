@@ -13,7 +13,7 @@
 #define kBurnMapName @"uBurnMapTexture"
 
 @interface FireEffect ()
-@property (nonatomic, strong) Shader *shader;
+@property (nonatomic, strong) CustomShader *shader;
 @property (nonatomic, strong) Plane *plane;
 @property (nonatomic, strong) Texture *burnMapTexture;
 @end
@@ -21,7 +21,7 @@
 
 - (id)init
 {
-    Shader *shader = [[Shader alloc] initWithVertexShader:@"fire_shader.vert" fragmentShader:@"fire_shader.frag"];
+    CustomShader *shader = [[CustomShader alloc] initWithVertexShader:@"fire_shader.vert" fragmentShader:@"fire_shader.frag"];
     self = [super initWithShader:shader];
     if (self) {
         self.transitionDuration = 4.f;
@@ -40,7 +40,7 @@
 {
     [super preRenderSetup];
     [self.shader set:kFireProgressName toFloat:self.progress];
-    GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.projectionMatrix, self.modelViewMatrix);
+    GLKMatrix4 modelViewProjectionMatrix = GLKMatrix4Multiply(self.shader.projectionMatrix, self.shader.modelViewMatrix);
     [self.shader set:kGLSLModelViewProjectionMatrixName toGLKMatrix4:modelViewProjectionMatrix];
     if (self.sourceScreenshotTexture) {
         [self.shader useTexture:self.sourceScreenshotTexture atLocation:GL_TEXTURE0 forName:kGLSLTextureName];

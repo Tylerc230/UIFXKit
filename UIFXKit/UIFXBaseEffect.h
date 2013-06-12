@@ -6,18 +6,16 @@
 //  Copyright (c) 2012 Casselman Consulting. All rights reserved.
 //
 
-#import "Shader.h"
+#import "CustomShader.h"
 #import "SceneGraph.h"
 #import "Texture.h"
 @interface UIFXBaseEffect : NSObject
 @property (nonatomic, readonly) SceneGraph *graph;
 @property (nonatomic, strong) Texture *sourceScreenshotTexture;
 @property (nonatomic, strong) Texture *destScreenshotTexture;
-@property (nonatomic, assign) GLKMatrix4 projectionMatrix;
-@property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
 @property (nonatomic, assign) float progress;
 
-- (id)initWithShader:(id<GLKNamedEffect>)shader;
+- (id)initWithShader:(Shader *)shader;
 - (void)setSourceSnapshot:(UIImage *)snapshot;
 - (void)setDestSnapshot:(UIImage *)snapshot;
 - (void)preRenderSetup;

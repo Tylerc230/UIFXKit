@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Shader.h"
 #import "GLKit/GLKit.h"
 #import "Texture.h"
 
@@ -26,7 +27,7 @@ typedef enum
     TESS_EVALUATION
 }GLSLShaderType;
 
-@interface Shader : NSObject<GLKNamedEffect>
+@interface CustomShader : Shader
 - (id)initWithVertexShader:(NSString *)vertexShaderFile fragmentShader:(NSString *)fragmentShaderFile;
 - (void)bindAttribLocation:(GLuint) location name:(NSString *)name;
 - (void)bindUniformName:(NSString *)name;

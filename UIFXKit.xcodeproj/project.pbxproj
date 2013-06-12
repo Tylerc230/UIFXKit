@@ -20,6 +20,8 @@
 		7077D7A21767D1D000253AB8 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077D7A11767D1D000253AB8 /* SourceViewController.m */; };
 		7077D7A51767D69C00253AB8 /* ContinuousEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077D7A41767D69C00253AB8 /* ContinuousEffectViewController.m */; };
 		707B6986174C90E400AB915C /* texture2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 707B6985174C90E400AB915C /* texture2.jpg */; };
+		70B2A02B176814B300DB0F4D /* Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2A02A176814B300DB0F4D /* Shader.m */; };
+		70B2A02E1768153D00DB0F4D /* FixPipelineShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2A02D1768153D00DB0F4D /* FixPipelineShader.m */; };
 		70BC97401752F83F0094D469 /* burn_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BC973F1752F83F0094D469 /* burn_map.png */; };
 		70BC97431752F8580094D469 /* FireEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BC97421752F8580094D469 /* FireEffect.m */; };
 		70C23C3F173EAE5300F54D6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C3E173EAE5300F54D6C /* UIKit.framework */; };
@@ -36,7 +38,7 @@
 		70C23C5F173EAE5300F54D6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C23C40173EAE5300F54D6C /* Foundation.framework */; };
 		70C23C67173EAE5300F54D6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C23C65173EAE5300F54D6C /* InfoPlist.strings */; };
 		70C23C6A173EAE5300F54D6C /* UIFXKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C69173EAE5300F54D6C /* UIFXKitTests.m */; };
-		70C23C76173EAF2F00F54D6C /* Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* Shader.m */; };
+		70C23C76173EAF2F00F54D6C /* CustomShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* CustomShader.m */; };
 		70C23C79173EB40300F54D6C /* UIFXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C78173EB40300F54D6C /* UIFXWindow.m */; };
 		70C23C7F173EB45A00F54D6C /* glMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7B173EB45A00F54D6C /* glMath.c */; };
 		70C23C80173EB45A00F54D6C /* glMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7B173EB45A00F54D6C /* glMath.c */; };
@@ -44,7 +46,7 @@
 		70C23C82173EB45A00F54D6C /* UIView+ImageRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C7E173EB45A00F54D6C /* UIView+ImageRender.m */; };
 		70C23C83173EB46E00F54D6C /* UIFXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C4E173EAE5300F54D6C /* UIFXAppDelegate.m */; };
 		70C23C84173EB47000F54D6C /* UIFXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C78173EB40300F54D6C /* UIFXWindow.m */; };
-		70C23C85173EB47000F54D6C /* Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* Shader.m */; };
+		70C23C85173EB47000F54D6C /* CustomShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C75173EAF2F00F54D6C /* CustomShader.m */; };
 		70C23C88173EB48D00F54D6C /* UIFXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C87173EB48D00F54D6C /* UIFXView.m */; };
 		70C23C8B173EB4C500F54D6C /* UIFXBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C23C8A173EB4C500F54D6C /* UIFXBaseEffect.m */; };
 		70D1A4921745E08D0000414B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D1A4911745E08D0000414B /* MainStoryboard.storyboard */; };
@@ -90,6 +92,10 @@
 		7077D7A31767D69C00253AB8 /* ContinuousEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousEffectViewController.h; sourceTree = "<group>"; };
 		7077D7A41767D69C00253AB8 /* ContinuousEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinuousEffectViewController.m; sourceTree = "<group>"; };
 		707B6985174C90E400AB915C /* texture2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture2.jpg; sourceTree = "<group>"; };
+		70B2A029176814B300DB0F4D /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		70B2A02A176814B300DB0F4D /* Shader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shader.m; sourceTree = "<group>"; };
+		70B2A02C1768153D00DB0F4D /* FixPipelineShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixPipelineShader.h; sourceTree = "<group>"; };
+		70B2A02D1768153D00DB0F4D /* FixPipelineShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixPipelineShader.m; sourceTree = "<group>"; };
 		70BC973F1752F83F0094D469 /* burn_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burn_map.png; sourceTree = "<group>"; };
 		70BC97411752F8580094D469 /* FireEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireEffect.h; sourceTree = "<group>"; };
 		70BC97421752F8580094D469 /* FireEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireEffect.m; sourceTree = "<group>"; };
@@ -114,8 +120,8 @@
 		70C23C66173EAE5300F54D6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70C23C68173EAE5300F54D6C /* UIFXKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFXKitTests.h; sourceTree = "<group>"; };
 		70C23C69173EAE5300F54D6C /* UIFXKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFXKitTests.m; sourceTree = "<group>"; };
-		70C23C74173EAF2F00F54D6C /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
-		70C23C75173EAF2F00F54D6C /* Shader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shader.m; sourceTree = "<group>"; };
+		70C23C74173EAF2F00F54D6C /* CustomShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShader.h; sourceTree = "<group>"; };
+		70C23C75173EAF2F00F54D6C /* CustomShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShader.m; sourceTree = "<group>"; };
 		70C23C77173EB40300F54D6C /* UIFXWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFXWindow.h; sourceTree = "<group>"; };
 		70C23C78173EB40300F54D6C /* UIFXWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFXWindow.m; sourceTree = "<group>"; };
 		70C23C7B173EB45A00F54D6C /* glMath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glMath.c; sourceTree = "<group>"; };
@@ -249,6 +255,10 @@
 				70D1A4971745F07B0000414B /* UIFXSegue.h */,
 				70D1A4981745F07B0000414B /* UIFXSegue.m */,
 				70C23C45173EAE5300F54D6C /* Supporting Files */,
+				70B2A029176814B300DB0F4D /* Shader.h */,
+				70B2A02A176814B300DB0F4D /* Shader.m */,
+				70B2A02C1768153D00DB0F4D /* FixPipelineShader.h */,
+				70B2A02D1768153D00DB0F4D /* FixPipelineShader.m */,
 			);
 			path = UIFXKit;
 			sourceTree = "<group>";
@@ -372,8 +382,8 @@
 				70D1A4AF1746109B0000414B /* Model3D.m */,
 				70D1A4B01746109B0000414B /* SceneGraph.h */,
 				70D1A4B11746109B0000414B /* SceneGraph.m */,
-				70C23C74173EAF2F00F54D6C /* Shader.h */,
-				70C23C75173EAF2F00F54D6C /* Shader.m */,
+				70C23C74173EAF2F00F54D6C /* CustomShader.h */,
+				70C23C75173EAF2F00F54D6C /* CustomShader.m */,
 				70D1A4B817461B8F0000414B /* Texture.h */,
 				70D1A4B917461B8F0000414B /* Texture.m */,
 			);
@@ -513,7 +523,7 @@
 				70C23C7F173EB45A00F54D6C /* glMath.c in Sources */,
 				70C23C81173EB45A00F54D6C /* UIView+ImageRender.m in Sources */,
 				70C23C84173EB47000F54D6C /* UIFXWindow.m in Sources */,
-				70C23C85173EB47000F54D6C /* Shader.m in Sources */,
+				70C23C85173EB47000F54D6C /* CustomShader.m in Sources */,
 				701AD2E61743097600CC4571 /* UIFXView.m in Sources */,
 				701AD2E71743097E00CC4571 /* UIFXBaseEffect.m in Sources */,
 				70D1A4991745F07B0000414B /* UIFXSegue.m in Sources */,
@@ -531,6 +541,8 @@
 				7077D79F1767CC2000253AB8 /* VenetianEffect.m in Sources */,
 				7077D7A21767D1D000253AB8 /* SourceViewController.m in Sources */,
 				7077D7A51767D69C00253AB8 /* ContinuousEffectViewController.m in Sources */,
+				70B2A02B176814B300DB0F4D /* Shader.m in Sources */,
+				70B2A02E1768153D00DB0F4D /* FixPipelineShader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C23C6A173EAE5300F54D6C /* UIFXKitTests.m in Sources */,
-				70C23C76173EAF2F00F54D6C /* Shader.m in Sources */,
+				70C23C76173EAF2F00F54D6C /* CustomShader.m in Sources */,
 				70C23C79173EB40300F54D6C /* UIFXWindow.m in Sources */,
 				70C23C80173EB45A00F54D6C /* glMath.c in Sources */,
 				70C23C82173EB45A00F54D6C /* UIView+ImageRender.m in Sources */,

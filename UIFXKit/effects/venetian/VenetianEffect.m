@@ -8,15 +8,17 @@
 
 #import "VenetianEffect.h"
 #import "HorzStripPlane.h"
+#import "FixPipelineShader.h"
+
 @interface VenetianEffect ()
-@property (nonatomic, strong) GLKBaseEffect *shader;
+@property (nonatomic, strong) FixPipelineShader *shader;
 @property (nonatomic, strong) HorzStripPlane *planeStrip;
 @end
 
 @implementation VenetianEffect
 - (id)init
 {
-    GLKBaseEffect *shader = [[GLKBaseEffect alloc] init];
+    FixPipelineShader *shader = [[FixPipelineShader alloc] init];
     self = [super initWithShader:shader];
     if (self) {
         self.shader = shader;
@@ -30,15 +32,8 @@
 - (void)preRenderSetup
 {
     [super preRenderSetup];
-    self.shader.transform.projectionMatrix = self.projectionMatrix;
-    self.shader.transform.modelviewMatrix = self.modelViewMatrix;
-    if (self.sourceScreenshotTexture != nil)
-    {
-        self.shader.texture2d0.enabled = GL_TRUE;
-        self.shader.texture2d0.name = self.sourceScreenshotTexture.textureInfo.name;
-    } else {
-        self.shader.texture2d0.enabled = GL_FALSE;
-    }
+    self.shader.texture1 = self.sourceScreenshotTexture;
+    self.shader.texture2 = self.destScreenshotTexture;
 }
 
 @end

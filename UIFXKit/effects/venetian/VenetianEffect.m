@@ -30,6 +30,8 @@
 - (void)preRenderSetup
 {
     [super preRenderSetup];
+    self.shader.transform.projectionMatrix = self.projectionMatrix;
+    self.shader.transform.modelviewMatrix = self.modelViewMatrix;
     if (self.sourceScreenshotTexture != nil)
     {
         self.shader.texture2d0.enabled = GL_TRUE;
@@ -38,17 +40,5 @@
         self.shader.texture2d0.enabled = GL_FALSE;
     }
 }
-
-- (void)setProjectionMatrix:(GLKMatrix4)projectionMatrix
-{
-    self.shader.transform.projectionMatrix = projectionMatrix;
-}
-
-- (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
-{
-    self.shader.transform.modelviewMatrix = modelViewMatrix;
-}
-
-
 
 @end

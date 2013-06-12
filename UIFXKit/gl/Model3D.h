@@ -22,7 +22,6 @@
 //Objects vertices + subobjects verts
 @property (nonatomic, readonly) NSUInteger totalVertexCount;
 @property (nonatomic, readonly) NSUInteger numVerticies;
-@property (nonatomic, assign) BOOL twoSided;
 
 - (id)initWithSize:(GLKVector3)size;
 - (void)updateVerticies:(Vertex *)vertexBuffer;

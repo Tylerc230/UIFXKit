@@ -7,7 +7,7 @@
 //
 
 #import "HorzStripPlane.h"
-#import "Plane.h"
+#import "DoubleSidedPlane.h"
 
 @interface HorzStripPlane ()
 
@@ -21,7 +21,7 @@
         float stripH = height/numStrips;
         float dV = 1.f/numStrips;
         for (int i = 0; i < numStrips; i++) {
-            Plane *strip = [[Plane alloc] initWithWidth:width height:stripH nx:2 ny:2];
+            DoubleSidedPlane *strip = [[DoubleSidedPlane alloc] initWithWidth:width height:stripH nx:2 ny:2];
             strip.position = GLKVector3Make(0.f, i * stripH, 0.f);
             strip.anchorPoint = GLKVector3Make(0.f, stripH/2, 0.f);
             float v0 =  1.f - i * dV;

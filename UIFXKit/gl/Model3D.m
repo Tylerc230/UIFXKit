@@ -82,4 +82,9 @@ GLKVector2 rotate2DVector(float radians, GLKVector2 vector);
     [self.subObjects addObject:object];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"pos %f %f %f, size %f, %f, %f", self.position.x, self.position.y, self.position.z, self.size.x, self.size.y, self.size.z];
+}
+
 @end

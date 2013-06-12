@@ -32,4 +32,18 @@
     return self;
 }
 
+- (void)setFrontTexture:(Texture *)frontTexture
+{
+    for (DoubleSidedPlane *strip in self.subObjects) {
+        strip.frontTexture = frontTexture;
+    }
+}
+
+- (void)setBackTexture:(Texture *)backTexture
+{
+    for (DoubleSidedPlane *strip in self.subObjects) {
+        strip.backTexture = backTexture;
+    }
+}
+
 @end

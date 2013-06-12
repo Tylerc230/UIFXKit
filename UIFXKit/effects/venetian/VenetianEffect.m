@@ -48,4 +48,16 @@
     self.shader.texture1 = model.texture;
 }
 
+- (void)setSourceScreenshotTexture:(Texture *)sourceScreenshotTexture
+{
+    [super setSourceScreenshotTexture:sourceScreenshotTexture];
+    self.planeStrip.frontTexture = sourceScreenshotTexture;
+}
+
+- (void)setDestScreenshotTexture:(Texture *)destScreenshotTexture
+{
+    [super setDestScreenshotTexture:destScreenshotTexture];
+    self.planeStrip.backTexture = destScreenshotTexture;
+}
+
 @end

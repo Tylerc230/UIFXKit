@@ -9,17 +9,22 @@
 #import "DoubleSidedPlane.h"
 #import "Plane.h"
 
+@interface DoubleSidedPlane ()
+@property (nonatomic, strong) Plane *front;
+@property (nonatomic, strong) Plane *back;
+@end
+
 @implementation DoubleSidedPlane
 - (id)initWithWidth:(float)width height:(float)height nx:(int)nx ny:(int)ny
 {
     self = [super initWithSize:GLKVector3Make(width, height, 0.f)];
     if (self) {
-        Plane *front = [[Plane alloc] initWithWidth:width height:height nx:nx ny:ny];
-        front.position = GLKVector3Make(0.f, 0.f, .1f);
-        [self addSubObject:front];
+        self.front = [[Plane alloc] initWithWidth:width height:height nx:nx ny:ny];
+        self.front.position = GLKVector3Make(0.f, 0.f, -.1f);
+        [self addSubObject:self.front];
         
-        Plane *back = [[Plane alloc] initWithWidth:width height:height nx:nx ny:ny];
-        [self addSubObject:back];
+        self.back = [[Plane alloc] initWithWidth:width height:height nx:nx ny:ny];
+        [self addSubObject:self.back];
         
     }
     return self;
@@ -32,4 +37,18 @@
         subobject.uvMap = uvMap;
     }
 }
+
+- (void)setFrontTexture:(Texture *)frontTexture
+{
+    _frontTexture = frontTexture;
+    self.front.texture = frontTexture;
+}
+
+- (void)setBackTexture:(Texture *)backTexture
+{
+    _backTexture = backTexture;
+    self.back.texture = backTexture;
+    
+}
+
 @end

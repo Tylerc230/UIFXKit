@@ -39,6 +39,9 @@
     [super preRenderSetup];
     self.shader.texture1 = self.sourceScreenshotTexture;
     self.shader.texture2 = self.destScreenshotTexture;
+    for (Model3D *strip in self.planeStrip.subObjects) {
+        strip.rotation = GLKVector3Make(M_PI * self.progress, 0.f, 0.f);
+    }
 }
 
 @end

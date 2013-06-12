@@ -12,5 +12,6 @@
 @interface UIFXView : GLKView <GLKViewDelegate>
 @property (nonatomic, strong) UIImage *snapshot;
 @property (nonatomic, strong) UIFXBaseEffect *effect;
+@property (nonatomic, assign) GLKVector4 backgroundGLColor;
 - (void)showEffect:(BOOL)show;
 @end

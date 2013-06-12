@@ -22,6 +22,7 @@
 {
     [super viewDidLoad];
     [self.effectView setEffect:self.effect];
+    self.effectView.backgroundGLColor = kWhiteColor;
 }
 
 #pragma mark - Public methods

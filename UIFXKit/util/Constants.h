@@ -9,6 +9,7 @@
 #ifndef UIFXKit_Constants_h
 #define UIFXKit_Constants_h
 #define kWhiteColor GLKVector4Make(1.f, 1.f, 1.f, 1.f);
+#define kClearColor GLKVector4Make(0.f, 0.f, 0.f, 0.f);
 #define kScreenSize [UIScreen mainScreen].bounds.size
 
 #endif

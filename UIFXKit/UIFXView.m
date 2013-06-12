@@ -48,7 +48,8 @@
     if (!self.animate) {
         return;
     }
-    glClearColor(0.f, 0.f, 0.f, .0f);
+    GLKVector4 bgColor = self.backgroundGLColor;
+    glClearColor(bgColor.r, bgColor.g, bgColor.b, bgColor.a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     CFTimeInterval duration = self.displayLink.timestamp - self.lastTimestamp;
     if (self.lastTimestamp == 0.f) {
@@ -104,6 +105,7 @@
     self.contentScaleFactor = [UIScreen mainScreen].scale;
     
     self.backgroundColor = [UIColor clearColor];
+    self.backgroundGLColor = kClearColor;
     self.opaque = NO;
     self.delegate = self;
     self.userInteractionEnabled = NO;

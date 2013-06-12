@@ -38,7 +38,7 @@
 {
     [super preRenderSetup];
     for (Model3D *strip in self.planeStrip.subObjects) {
-        strip.rotation = GLKVector3Make(M_PI * self.progress, 0.f, 0.f);
+        strip.rotation = GLKVector3Make(-M_PI * self.progress, 0.f, 0.f);
     }
 }
 

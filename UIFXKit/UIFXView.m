@@ -74,6 +74,11 @@
     }
     if (show) {
         self.hidden = NO;
+        self.alpha = 0.f;
+        [UIView animateWithDuration:.1 animations:^{
+            self.alpha = 1.0;
+        } completion:^(BOOL finished) {
+        }];
     } else {
         [UIView animateWithDuration:.75f animations:^{
             self.alpha = 0.f;

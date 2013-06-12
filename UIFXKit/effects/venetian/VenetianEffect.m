@@ -22,11 +22,16 @@
     self = [super initWithShader:shader];
     if (self) {
         self.shader = shader;
-        self.planeStrip = [[HorzStripPlane alloc] initWithWidth:kScreenSize.width height:kScreenSize.height numStrips:3];
-        [self.graph addWorldObject:self.planeStrip];
-        [self updateVertexBuffer];
     }
     return self;
+}
+
+- (void)setViewSize:(GLKVector2)viewSize
+{
+    [super setViewSize:viewSize];
+    self.planeStrip = [[HorzStripPlane alloc] initWithWidth:viewSize.x height:viewSize.y numStrips:3];
+    [self.graph addWorldObject:self.planeStrip];
+    [self updateVertexBuffer];
 }
 
 - (void)preRenderSetup

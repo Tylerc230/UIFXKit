@@ -34,14 +34,20 @@
     return self;
 }
 
+- (void)setViewSize:(GLKVector2)viewSize
+{
+    _viewSize = viewSize;
+    [self positionCamera];
+}
+
 - (void)setSourceSnapshot:(UIImage *)snapshot
 {
-    self.sourceScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
+    self.sourceScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:self.viewSize];
 }
 
 - (void)setDestSnapshot:(UIImage *)snapshot
 {
-    self.destScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:kScreenSize];
+    self.destScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:self.viewSize];
 }
 
 - (void)preRenderSetup
@@ -91,6 +97,7 @@
 {
     GLKMatrixStackPush(self.matrixStack);
     [self updateStateWithModel:object];
+    [self.shader prepareToDraw];//This might be slowing down CustomShaders
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, object.indexByteSize, object.indexData, GL_STATIC_DRAW);
     glDrawElements(GL_TRIANGLES, object.indexCount, GL_UNSIGNED_SHORT, 0);
     
@@ -102,7 +109,6 @@
 
 - (void)setupGLState
 {
-    [self positionCamera];
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
     glEnable(GL_BLEND);
@@ -126,17 +132,17 @@
 
 - (GLKMatrix4)projectionMatrix
 {
-    float aspect = fabsf(kScreenSize.width/kScreenSize.height);
+    float aspect = fabsf(self.viewSize.x/self.viewSize.y);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(kCameraAngleDeg), aspect, 100.0f, 10000.f);
     return projectionMatrix;
 }
 
 - (void)positionCamera
 {
-    float screenHeigh = kScreenSize.height;
-    float cameraZ = -(screenHeigh/2)/tan(GLKMathDegreesToRadians(kCameraAngleDeg)/2);
+    float screenHeight = self.viewSize.y;
+    float cameraZ = -(screenHeight/2)/tan(GLKMathDegreesToRadians(kCameraAngleDeg)/2);
     self.matrixStack = GLKMatrixStackCreate(NULL);
-    GLKMatrixStackTranslate(self.matrixStack, -kScreenSize.width/2.f, kScreenSize.height/2.f, cameraZ);
+    GLKMatrixStackTranslate(self.matrixStack, -self.viewSize.x/2.f, self.viewSize.y/2.f, cameraZ);
     GLKMatrixStackRotate(self.matrixStack, M_PI, 1.f, 0.f, 0.f);
     GLKMatrixStackPush(self.matrixStack);    
 }

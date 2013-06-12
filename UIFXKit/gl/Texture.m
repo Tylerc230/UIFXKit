@@ -9,9 +9,6 @@
 #import "Texture.h"
 
 @implementation Texture
-@synthesize textureInfo;
-@synthesize textureSize;
-
 - (id)initWithFile:(NSString *)filename
 {
     GLKTextureInfo *newTexture = nil;
@@ -24,7 +21,7 @@
                                                   forKey:GLKTextureLoaderOriginBottomLeft]  error:&error];
         NSAssert(error == nil, @"glError: (%d) Failed to load texture %@",glGetError(), error);
         self.textureInfo = newTexture;
-        self.textureSize = CGSizeMake(self.textureInfo.width, self.textureInfo.height);
+        self.textureSize = GLKVector2Make(self.textureInfo.width, self.textureInfo.height);
     }
     return self;
 
@@ -36,7 +33,7 @@
     glDeleteTextures(1, &name);
 }
 
-- (id)initWithImage:(UIImage *)image size:(CGSize)size
+- (id)initWithImage:(UIImage *)image size:(GLKVector2)size
 {
     self = [super init];
     if (self) {
@@ -53,7 +50,7 @@
 
 - (GLKVector2)scaledTextureCoordinates
 {
-    return GLKVector2Make(self.textureSize.width/self.textureInfo.width, self.textureSize.height/self.textureInfo.height);
+    return GLKVector2Make(self.textureSize.x/self.textureInfo.width, self.textureSize.y/self.textureInfo.height);
 }
 
 

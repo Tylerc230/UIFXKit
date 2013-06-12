@@ -32,12 +32,16 @@
         self.shader = shader;
         [self.shader bindUniformName:kRippleOriginName];
         [self.shader bindUniformName:kRippleRadiusName];
-        self.plane = [[Plane alloc] initWithWidth:kScreenSize.width height:kScreenSize.height nx:2 ny:2];
-        [self.graph addWorldObject:self.plane];
-        [self updateVertexBuffer];
-
     }
     return self;
+}
+
+- (void)setViewSize:(GLKVector2)viewSize
+{
+    [super setViewSize:viewSize];
+    self.plane = [[Plane alloc] initWithWidth:viewSize.x height:viewSize.y nx:2 ny:2];
+    [self.graph addWorldObject:self.plane];
+    [self updateVertexBuffer];
 }
 
 - (void)preRenderSetup

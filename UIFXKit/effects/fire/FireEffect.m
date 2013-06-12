@@ -28,12 +28,17 @@
         self.shader = shader;
         [self.shader bindUniformName:kFireProgressName];
         [self.shader bindUniformName:kBurnMapName];
-        self.plane = [[Plane alloc] initWithWidth:kScreenSize.width height:kScreenSize.height nx:2 ny:2];
         self.burnMapTexture = [[Texture alloc] initWithFile:@"burn_map"];
-        [self.graph addWorldObject:self.plane];
-        [self updateVertexBuffer];
     }
     return self;
+}
+
+- (void)setViewSize:(GLKVector2)viewSize
+{
+    [super setViewSize:viewSize];
+    self.plane = [[Plane alloc] initWithWidth:viewSize.x height:viewSize.y nx:2 ny:2];
+    [self.graph addWorldObject:self.plane];
+    [self updateVertexBuffer];
 }
 
 - (void)preRenderSetup

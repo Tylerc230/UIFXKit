@@ -16,8 +16,8 @@
 @property (nonatomic, strong) GLKTextureInfo *textureInfo;
 //Should be set to the size of the texture you want to render
 //allows you to place non POT images into a POT texture
-@property (nonatomic, assign) CGSize textureSize;
-- (id)initWithImage:(UIImage *)image size:(CGSize)size;
+@property (nonatomic, assign) GLKVector2 textureSize;
+- (id)initWithImage:(UIImage *)image size:(GLKVector2)size;
 - (id)initWithFile:(NSString *)filename;
 //This is the texture coordinates of the non POT image embedded into the POT texture
 - (GLKVector2)scaledTextureCoordinates;

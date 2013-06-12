@@ -28,9 +28,12 @@
 #pragma mark - IBActions
 - (IBAction)sliderTapped:(UISlider *)sender
 {
-    [self.effect setSourceSnapshot:[[self sourceView] snapshot]];
-//    [self.effect setDestSnapshot:[[self destView] snapshot]];
+    UIView *sourceView = [self sourceView];
+    UIView *destView = [self destView];
+    [self.effect setSourceSnapshot:[sourceView snapshot]];
     [self.effectView showEffect:YES];
+    [self toggleViewVisibility];
+    [self.effect setDestSnapshot:[destView snapshot]];
 }
 
 - (IBAction)sliderValueChanged:(UISlider *)slider
@@ -44,6 +47,12 @@
 }
 
 #pragma mark - Private method
+- (void)toggleViewVisibility
+{
+    self.view1.hidden = !self.view1.hidden;
+    self.view2.hidden = !self.view2.hidden;
+}
+
 - (UIView *)sourceView
 {
     if (self.view1.hidden) {

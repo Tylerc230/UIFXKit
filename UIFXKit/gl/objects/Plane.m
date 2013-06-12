@@ -70,7 +70,7 @@
             GLKVector3 pos = GLKVector3Make(x * dx, y * dy, 0.f);
             GLKVector3 norm = GLKVector3Make(0., 0., 1.f);
             //We use 1 - dv since our coord system is y pointing down
-            GLKVector2 uv = GLKVector2Make(uvMap.u0 + x * du, uvMap.v0 + (1.f - y * dv));
+            GLKVector2 uv = GLKVector2Make(uvMap.u0 + x * du, uvMap.v0 + y * dv);
             *vert = CREATE_VERT(pos, norm, uv);
         }
     }

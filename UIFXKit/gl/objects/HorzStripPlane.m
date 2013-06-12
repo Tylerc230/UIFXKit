@@ -19,9 +19,12 @@
     self = [super initWithSize:GLKVector3Make(width, height, 0.f)];
     if (self) {
         float stripH = height/numStrips;
+        float dV = 1.f/numStrips;
         for (int i = 0; i < numStrips; i++) {
             Plane *strip = [[Plane alloc] initWithWidth:width height:stripH nx:2 ny:2];
             strip.position = GLKVector3Make(0.f, i * stripH, 0.f);
+            float v0 =  1.f - i * dV;
+            strip.uvMap = [[UVMap alloc] initWithU0:0.f u1:1.f v0:v0 v1:v0 - dV];
             [self addSubObject:strip];
         }
     }

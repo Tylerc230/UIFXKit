@@ -17,4 +17,5 @@
 @property (nonatomic, readonly) float dU;
 + (UVMap *)defaultUVMap;
 - (id)initWithU0:(float)u0 u1:(float)u1 v0:(float)v0 v1:(float)v1;
+- (UVMap *)invertV;
 @end

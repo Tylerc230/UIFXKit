@@ -29,7 +29,7 @@
 - (void)setViewSize:(GLKVector2)viewSize
 {
     [super setViewSize:viewSize];
-    self.planeStrip = [[HorzStripPlane alloc] initWithWidth:viewSize.x height:viewSize.y numStrips:3];
+    self.planeStrip = [[HorzStripPlane alloc] initWithWidth:viewSize.x height:viewSize.y numStrips:10];
     [self.graph addWorldObject:self.planeStrip];
     [self updateVertexBuffer];
 }

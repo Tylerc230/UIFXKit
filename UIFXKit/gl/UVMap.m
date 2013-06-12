@@ -36,6 +36,20 @@
     return self.v1 - self.v0;
 }
 
+- (UVMap *)invertV
+{
+    UVMap *invert = [self copy];
+    float temp0 = invert.v0;
+    invert.v0 = invert.v1;
+    invert.v1 = temp0;
+    return invert;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return [[UVMap alloc] initWithU0:self.u0 u1:self.u1 v0:self.v0 v1:self.v1];
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"u0 %f u1 %f v0 %f v1 %f", self.u0, self.u1, self.v0, self.v1];

@@ -33,9 +33,8 @@
 - (void)setUvMap:(UVMap *)uvMap
 {
     [super setUvMap:uvMap];
-    for (Model3D *subobject in self.subObjects) {
-        subobject.uvMap = uvMap;
-    }
+    self.front.uvMap = uvMap;
+    self.back.uvMap = [uvMap invertV];
 }
 
 - (void)setFrontTexture:(Texture *)frontTexture

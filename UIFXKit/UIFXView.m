@@ -81,7 +81,7 @@
         } completion:^(BOOL finished) {
         }];
     } else {
-        [UIView animateWithDuration:.75f animations:^{
+        [UIView animateWithDuration:.1f animations:^{
             self.alpha = 0.f;
         } completion:^(BOOL finished) {
             self.hidden = YES;

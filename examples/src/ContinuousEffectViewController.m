@@ -9,6 +9,7 @@
 #import "ContinuousEffectViewController.h"
 #import "UIFXView.h"
 #import "UIView+ImageRender.h"
+#import "PRTween.h"
 
 @interface ContinuousEffectViewController ()
 @property (nonatomic, strong) IBOutlet UIView *view1;
@@ -25,16 +26,16 @@
     self.effectView.backgroundGLColor = kWhiteColor;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+}
+
 #pragma mark - Public methods
 #pragma mark - IBActions
 - (IBAction)sliderTapped:(UISlider *)sender
 {
-    UIView *sourceView = [self sourceView];
-    UIView *destView = [self destView];
-    [self.effect setSourceSnapshot:[sourceView snapshot]];
+    [self setSnapShots];
     [self.effectView showEffect:YES];
-    [self toggleViewVisibility];
-    [self.effect setDestSnapshot:[destView snapshot]];
 }
 
 - (IBAction)sliderValueChanged:(UISlider *)slider
@@ -44,32 +45,42 @@
 
 - (IBAction)sliderValueReleased:(UISlider *)slider
 {
-    [self.effectView showEffect:NO];
+    float progress = slider.value;
+    float end = slider.value > .5f ? 1.f : 0.f;
+    PRTweenPeriod *period = [PRTweenPeriod periodWithStartValue:progress endValue:end duration:.5f];
+    PRTweenOperation *operation = [[PRTweenOperation alloc] init];
+    operation.period = period;
+    operation.updateBlock = ^(PRTweenPeriod *tweenPeriod, BOOL *stop)
+    {
+        float currentProgress = tweenPeriod.tweenedValue;
+        slider.value = currentProgress;
+        self.effect.progress = currentProgress;
+    };
+    operation.completeBlock = ^(BOOL finish)
+    {
+        BOOL showDest = end > .5f;
+        self.view2.hidden = !showDest;
+        self.view1.hidden = showDest;
+        [self.effectView showEffect:NO];
+    };
+    [[PRTween sharedInstance] addTweenOperation:operation];
+    
 }
 
 #pragma mark - Private method
-- (void)toggleViewVisibility
+- (void)setSnapShots
 {
-    self.view1.hidden = !self.view1.hidden;
-    self.view2.hidden = !self.view2.hidden;
-}
+    BOOL view1Hidden = self.view1.hidden;
+    BOOL view2Hidden = self.view2.hidden;
 
-- (UIView *)sourceView
-{
-    if (self.view1.hidden) {
-        return self.view2;
-    } else {
-        return self.view1;
-    }
-}
+    self.view1.hidden = NO;
+    self.view2.hidden = NO;
+    [self.effect setSourceSnapshot:[self.view1 snapshot]];
+    [self.effect setDestSnapshot:[self.view2 snapshot]];
+    
+    self.view1.hidden = view1Hidden;
+    self.view2.hidden = view2Hidden;
 
-- (UIView *)destView
-{
-    if (self.view1.hidden) {
-        return self.view1;
-    } else {
-        return self.view2;
-    }
 }
 
 @end

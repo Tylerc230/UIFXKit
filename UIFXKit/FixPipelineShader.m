@@ -32,12 +32,14 @@
 {
     [super setProjectionMatrix:projectionMatrix];
     self.baseEffect.transform.projectionMatrix = self.projectionMatrix;
+
 }
 
 - (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
 {
     [super setModelViewMatrix:modelViewMatrix];
     self.baseEffect.transform.modelviewMatrix = self.modelViewMatrix;
+    [self setupLights];
 }
 
 - (void)setTexture1:(Texture *)texture1
@@ -63,4 +65,19 @@
         self.baseEffect.texture2d1.enabled = GL_FALSE;
     }
 }
+
+- (void)setupLights
+{
+    GLKEffectPropertyLight *light = self.baseEffect.light0;
+    light.enabled = YES;
+    light.position = self.lightPosition;
+//    light.ambientColor = kWhiteColor;
+//    light.diffuseColor = kWhiteColor;
+//    light.specularColor = kWhiteColor;
+    
+//    self.baseEffect.lightModelTwoSided = GL_TRUE;
+//    self.baseEffect.lightingType = GLKLightingTypePerVertex;
+    
+}
+
 @end

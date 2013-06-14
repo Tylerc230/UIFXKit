@@ -20,10 +20,12 @@
     self = [super initWithSize:GLKVector3Make(width, height, 0.f)];
     if (self) {
         self.front = [[Plane alloc] initWithWidth:width height:height nx:nx ny:ny];
-        self.front.position = GLKVector3Make(0.f, 0.f, -.1f);
         [self addSubObject:self.front];
         
         self.back = [[Plane alloc] initWithWidth:width height:height nx:nx ny:ny];
+        self.back.anchorPoint = GLKVector3Make(0.f, height/2, 0.f);
+        self.back.position = GLKVector3Make(0.f, 0.f, 1.f);//Since z points away from the camera in our setup
+        self.back.rotation = GLKVector3Make(M_PI, 0.f, 0.f);
         [self addSubObject:self.back];
         
     }
@@ -34,7 +36,7 @@
 {
     [super setUvMap:uvMap];
     self.front.uvMap = uvMap;
-    self.back.uvMap = [uvMap invertV];
+    self.back.uvMap = uvMap;
 }
 
 - (void)setFrontTexture:(Texture *)frontTexture

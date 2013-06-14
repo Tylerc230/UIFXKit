@@ -26,10 +26,6 @@
     self.effectView.backgroundGLColor = kWhiteColor;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-}
-
 #pragma mark - Public methods
 #pragma mark - IBActions
 - (IBAction)sliderTapped:(UISlider *)sender

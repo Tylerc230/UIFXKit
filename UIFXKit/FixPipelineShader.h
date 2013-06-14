@@ -12,4 +12,5 @@
 @interface FixPipelineShader : Shader
 @property (nonatomic, strong) Texture *texture1;
 @property (nonatomic, strong) Texture *texture2;
+@property (nonatomic, assign) GLKVector4 lightPosition;
 @end

@@ -22,6 +22,7 @@
     self = [super initWithShader:shader];
     if (self) {
         self.shader = shader;
+        [self setupLight];
     }
     return self;
 }
@@ -34,6 +35,7 @@
     [self updateVertexBuffer];
 }
 
+//Gets called once per frame
 - (void)preRenderSetup
 {
     [super preRenderSetup];
@@ -42,6 +44,7 @@
     }
 }
 
+//Gets called once per object per frame
 - (void)updateStateWithModel:(Model3D *)model
 {
     [super updateStateWithModel:model];
@@ -58,6 +61,12 @@
 {
     [super setDestScreenshotTexture:destScreenshotTexture];
     self.planeStrip.backTexture = destScreenshotTexture;
+}
+
+#pragma mark - Private methods
+- (void)setupLight
+{
+    self.shader.lightPosition = GLKVector4Make(0.f, 0.f, -1.f, 0.f);
 }
 
 @end

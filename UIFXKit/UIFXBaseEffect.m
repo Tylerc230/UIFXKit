@@ -34,24 +34,19 @@
     return self;
 }
 
-- (void)setViewSize:(GLKVector2)viewSize
-{
-    _viewSize = viewSize;
-    [self positionCamera];
-}
-
 - (void)setSourceSnapshot:(UIImage *)snapshot
 {
-    self.sourceScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:self.viewSize];
+    self.sourceScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:self.glViewSize];
 }
 
 - (void)setDestSnapshot:(UIImage *)snapshot
 {
-    self.destScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:self.viewSize];
+    self.destScreenshotTexture = [[Texture alloc] initWithImage:snapshot size:self.glViewSize];
 }
 
 - (void)preRenderSetup
 {
+    [self positionCamera];
     [self.shader prepareToDraw];
     
     self.shader.projectionMatrix = self.projectionMatrix;
@@ -132,17 +127,17 @@
 
 - (GLKMatrix4)projectionMatrix
 {
-    float aspect = fabsf(self.viewSize.x/self.viewSize.y);
+    float aspect = fabsf(self.glViewSize.x/self.glViewSize.y);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(kCameraAngleDeg), aspect, 100.0f, 10000.f);
     return projectionMatrix;
 }
 
 - (void)positionCamera
 {
-    float screenHeight = self.viewSize.y;
+    float screenHeight = self.glViewSize.y;
     float cameraZ = -(screenHeight/2)/tan(GLKMathDegreesToRadians(kCameraAngleDeg)/2);
     self.matrixStack = GLKMatrixStackCreate(NULL);
-    GLKMatrixStackTranslate(self.matrixStack, -self.viewSize.x/2.f, self.viewSize.y/2.f, cameraZ);
+    GLKMatrixStackTranslate(self.matrixStack, -self.sourceViewSize.x/2.f, self.sourceViewSize.y/2.f, cameraZ);
     GLKMatrixStackRotate(self.matrixStack, M_PI, 1.f, 0.f, 0.f);
     GLKMatrixStackPush(self.matrixStack);    
 }

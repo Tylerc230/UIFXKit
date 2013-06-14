@@ -93,7 +93,7 @@
 - (void)setEffect:(UIFXBaseEffect *)effect
 {
     _effect = effect;
-    effect.viewSize = GLKVector2Make(self.frame.size.width, self.frame.size.height);
+    effect.glViewSize = CGToGLKPoint(self.frame.size);
 }
 
 #pragma mark - Private

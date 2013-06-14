@@ -14,7 +14,8 @@
 @property (nonatomic, strong) Texture *sourceScreenshotTexture;
 @property (nonatomic, strong) Texture *destScreenshotTexture;
 @property (nonatomic, assign) float progress;
-@property (nonatomic, assign) GLKVector2 viewSize;
+@property (nonatomic, assign) GLKVector2 glViewSize;
+@property (nonatomic, assign) GLKVector2 sourceViewSize;
 
 - (id)initWithShader:(Shader *)shader;
 - (void)setSourceSnapshot:(UIImage *)snapshot;

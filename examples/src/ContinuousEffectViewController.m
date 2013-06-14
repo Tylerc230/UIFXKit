@@ -23,6 +23,7 @@
 {
     [super viewDidLoad];
     [self.effectView setEffect:self.effect];
+    self.effect.sourceViewSize = CGToGLKPoint(self.view1.frame.size);
     self.effectView.backgroundGLColor = kWhiteColor;
 }
 

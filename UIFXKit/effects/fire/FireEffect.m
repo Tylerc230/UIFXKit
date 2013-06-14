@@ -33,10 +33,10 @@
     return self;
 }
 
-- (void)setViewSize:(GLKVector2)viewSize
+- (void)setSourceViewSize:(GLKVector2)sourceViewSize
 {
-    [super setViewSize:viewSize];
-    self.plane = [[Plane alloc] initWithWidth:viewSize.x height:viewSize.y nx:2 ny:2];
+    [super setSourceViewSize:sourceViewSize];
+    self.plane = [[Plane alloc] initWithWidth:sourceViewSize.x height:sourceViewSize.y nx:2 ny:2];
     [self.graph addWorldObject:self.plane];
     [self updateVertexBuffer];
 }

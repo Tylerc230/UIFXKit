@@ -60,6 +60,7 @@
 - (void)setEffect:(UIFXBaseEffect *)effect
 {
     _effect = effect;
+    effect.sourceViewSize = CGToGLKPoint(self.frame.size);
     self.fxView.effect = effect;
 }
 

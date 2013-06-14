@@ -46,6 +46,7 @@
 
 - (void)preRenderSetup
 {
+    self.matrixStack = GLKMatrixStackCreate(NULL);
     [self positionCamera];
     [self.shader prepareToDraw];
     
@@ -136,10 +137,8 @@
 {
     float screenHeight = self.glViewSize.y;
     float cameraZ = -(screenHeight/2)/tan(GLKMathDegreesToRadians(kCameraAngleDeg)/2);
-    self.matrixStack = GLKMatrixStackCreate(NULL);
     GLKMatrixStackTranslate(self.matrixStack, -self.sourceViewSize.x/2.f, self.sourceViewSize.y/2.f, cameraZ);
     GLKMatrixStackRotate(self.matrixStack, M_PI, 1.f, 0.f, 0.f);
-    GLKMatrixStackPush(self.matrixStack);    
 }
 
 

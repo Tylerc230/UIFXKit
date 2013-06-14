@@ -32,14 +32,19 @@
 {
     [super setProjectionMatrix:projectionMatrix];
     self.baseEffect.transform.projectionMatrix = self.projectionMatrix;
+}
 
+- (void)setViewMatrix:(GLKMatrix4)viewMatrix
+{
+    [super setViewMatrix:viewMatrix];
+    self.baseEffect.transform.modelviewMatrix = self.viewMatrix;
+    [self setupLights];
 }
 
 - (void)setModelViewMatrix:(GLKMatrix4)modelViewMatrix
 {
     [super setModelViewMatrix:modelViewMatrix];
     self.baseEffect.transform.modelviewMatrix = self.modelViewMatrix;
-    [self setupLights];
 }
 
 - (void)setTexture1:(Texture *)texture1

@@ -11,5 +11,6 @@
 @interface Shader : NSObject
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
+@property (nonatomic, assign) GLKMatrix4 viewMatrix;
 - (void)prepareToDraw;
 @end

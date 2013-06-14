@@ -51,6 +51,7 @@
     [self.shader prepareToDraw];
     
     self.shader.projectionMatrix = self.projectionMatrix;
+    self.shader.viewMatrix = GLKMatrixStackGetMatrix4(self.matrixStack);
     
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.indexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, self.vertexBuffer);

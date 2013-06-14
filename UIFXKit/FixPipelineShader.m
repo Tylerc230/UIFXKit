@@ -76,13 +76,9 @@
     GLKEffectPropertyLight *light = self.baseEffect.light0;
     light.enabled = YES;
     light.position = self.lightPosition;
-//    light.ambientColor = kWhiteColor;
-//    light.diffuseColor = kWhiteColor;
-//    light.specularColor = kWhiteColor;
-    
-//    self.baseEffect.lightModelTwoSided = GL_TRUE;
-//    self.baseEffect.lightingType = GLKLightingTypePerVertex;
-    
+    light.ambientColor = kWhiteColor;
+    light.diffuseColor = kWhiteColor;
+    light.specularColor = kWhiteColor;
 }
 
 @end
